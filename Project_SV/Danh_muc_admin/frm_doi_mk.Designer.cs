@@ -41,13 +41,15 @@ namespace Project_SV
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grtaikhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btndoimk
             // 
-            this.btndoimk.Location = new System.Drawing.Point(17, 115);
+            this.btndoimk.Location = new System.Drawing.Point(7, 27);
             this.btndoimk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btndoimk.Name = "btndoimk";
             this.btndoimk.Size = new System.Drawing.Size(112, 35);
@@ -100,7 +102,7 @@ namespace Project_SV
             this.tenDN,
             this.matkhau,
             this.hoten});
-            this.grtaikhoan.Location = new System.Drawing.Point(17, 177);
+            this.grtaikhoan.Location = new System.Drawing.Point(12, 197);
             this.grtaikhoan.Name = "grtaikhoan";
             this.grtaikhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grtaikhoan.Size = new System.Drawing.Size(423, 150);
@@ -133,7 +135,7 @@ namespace Project_SV
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(6, 25);
+            this.txttimkiem.Location = new System.Drawing.Point(6, 27);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(188, 26);
             this.txttimkiem.TabIndex = 3;
@@ -142,26 +144,36 @@ namespace Project_SV
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txttimkiem);
-            this.groupBox1.Location = new System.Drawing.Point(192, 99);
+            this.groupBox1.Location = new System.Drawing.Point(12, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 64);
+            this.groupBox1.Size = new System.Drawing.Size(200, 76);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btndoimk);
+            this.groupBox2.Location = new System.Drawing.Point(218, 115);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 76);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chức năng";
             // 
             // frm_doi_mk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(509, 400);
+            this.ClientSize = new System.Drawing.Size(450, 359);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grtaikhoan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtmasv);
             this.Controls.Add(this.txtmk);
-            this.Controls.Add(this.btndoimk);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -173,6 +185,7 @@ namespace Project_SV
             ((System.ComponentModel.ISupportInitialize)(this.grtaikhoan)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +205,6 @@ namespace Project_SV
         private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

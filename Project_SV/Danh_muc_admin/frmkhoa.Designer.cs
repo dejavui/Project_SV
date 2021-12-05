@@ -43,12 +43,13 @@ namespace Project_SV
             this.btnghi = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grkhoa)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // grkhoa
@@ -63,7 +64,7 @@ namespace Project_SV
             this.grkhoa.Name = "grkhoa";
             this.grkhoa.ReadOnly = true;
             this.grkhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grkhoa.Size = new System.Drawing.Size(395, 475);
+            this.grkhoa.Size = new System.Drawing.Size(395, 445);
             this.grkhoa.TabIndex = 0;
             this.grkhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grkhoa_CellClick);
             // 
@@ -132,9 +133,9 @@ namespace Project_SV
             this.btnfrmmain.Location = new System.Drawing.Point(7, 201);
             this.btnfrmmain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnfrmmain.Name = "btnfrmmain";
-            this.btnfrmmain.Size = new System.Drawing.Size(178, 50);
+            this.btnfrmmain.Size = new System.Drawing.Size(134, 50);
             this.btnfrmmain.TabIndex = 4;
-            this.btnfrmmain.Text = "Chuyển form main";
+            this.btnfrmmain.Text = "Form main";
             this.btnfrmmain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnfrmmain.UseVisualStyleBackColor = true;
             this.btnfrmmain.Click += new System.EventHandler(this.btnchuyenform_Click);
@@ -203,20 +204,11 @@ namespace Project_SV
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(87, 92);
+            this.txttimkiem.Location = new System.Drawing.Point(11, 25);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(148, 26);
+            this.txttimkiem.Size = new System.Drawing.Size(224, 26);
             this.txttimkiem.TabIndex = 10;
             this.txttimkiem.TextChanged += new System.EventHandler(this.txttimkiem_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Tìm kiếm";
             // 
             // groupBox1
             // 
@@ -228,7 +220,7 @@ namespace Project_SV
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Location = new System.Drawing.Point(420, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 287);
+            this.groupBox1.Size = new System.Drawing.Size(259, 268);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -237,23 +229,32 @@ namespace Project_SV
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtmakhoa);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txttenkhoa);
-            this.groupBox2.Controls.Add(this.txttimkiem);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(420, 311);
+            this.groupBox2.Location = new System.Drawing.Point(420, 292);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 140);
+            this.groupBox2.Size = new System.Drawing.Size(259, 101);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập liệu";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txttimkiem);
+            this.groupBox3.Location = new System.Drawing.Point(420, 399);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(259, 64);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
             // 
             // frmkhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(701, 546);
+            this.ClientSize = new System.Drawing.Size(701, 496);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grkhoa);
@@ -269,6 +270,8 @@ namespace Project_SV
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,12 +289,12 @@ namespace Project_SV
         private System.Windows.Forms.Button btnghi;
         private System.Windows.Forms.Button btnkhongghi;
         private System.Windows.Forms.TextBox txttimkiem;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma_khoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten_khoa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnfrmmain;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

@@ -98,7 +98,7 @@ namespace Project_SV
             this.ma_lop.DataPropertyName = "ma_lop";
             this.ma_lop.HeaderText = "Tên lớp";
             this.ma_lop.Name = "ma_lop";
-            this.ma_lop.Width = 120;
+            this.ma_lop.Width = 145;
             // 
             // frm_thong_tin
             // 

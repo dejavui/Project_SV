@@ -29,7 +29,6 @@ namespace Project_SV
         /// </summary>
         private void InitializeComponent()
         {
-            this.chuongtrinhTableAdapter1 = new Project_SV.QLSVDataSet1TableAdapters.chuongtrinhTableAdapter();
             this.btnkhoa = new System.Windows.Forms.Button();
             this.btnkhoahoc = new System.Windows.Forms.Button();
             this.btnchuongtrinh = new System.Windows.Forms.Button();
@@ -58,9 +57,6 @@ namespace Project_SV
             this.mnuSV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDiem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTL = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHL = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDSTL = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemtimkiem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThongtinSV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuItemThongKe = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,10 +75,6 @@ namespace Project_SV
             this.menuStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // chuongtrinhTableAdapter1
-            // 
-            this.chuongtrinhTableAdapter1.ClearBeforeFill = true;
             // 
             // btnkhoa
             // 
@@ -108,7 +100,7 @@ namespace Project_SV
             // 
             // btnchuongtrinh
             // 
-            this.btnchuongtrinh.Location = new System.Drawing.Point(18, 345);
+            this.btnchuongtrinh.Location = new System.Drawing.Point(19, 345);
             this.btnchuongtrinh.Name = "btnchuongtrinh";
             this.btnchuongtrinh.Size = new System.Drawing.Size(112, 46);
             this.btnchuongtrinh.TabIndex = 3;
@@ -128,7 +120,7 @@ namespace Project_SV
             // 
             // btnlop
             // 
-            this.btnlop.Location = new System.Drawing.Point(18, 241);
+            this.btnlop.Location = new System.Drawing.Point(19, 241);
             this.btnlop.Name = "btnlop";
             this.btnlop.Size = new System.Drawing.Size(112, 46);
             this.btnlop.TabIndex = 6;
@@ -148,7 +140,7 @@ namespace Project_SV
             // 
             // btnmonhoc
             // 
-            this.btnmonhoc.Location = new System.Drawing.Point(18, 293);
+            this.btnmonhoc.Location = new System.Drawing.Point(19, 293);
             this.btnmonhoc.Name = "btnmonhoc";
             this.btnmonhoc.Size = new System.Drawing.Size(112, 46);
             this.btnmonhoc.TabIndex = 8;
@@ -158,7 +150,7 @@ namespace Project_SV
             // 
             // btngiangkhoa
             // 
-            this.btngiangkhoa.Location = new System.Drawing.Point(18, 133);
+            this.btngiangkhoa.Location = new System.Drawing.Point(19, 133);
             this.btngiangkhoa.Name = "btngiangkhoa";
             this.btngiangkhoa.Size = new System.Drawing.Size(112, 46);
             this.btngiangkhoa.TabIndex = 9;
@@ -228,25 +220,25 @@ namespace Project_SV
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuDN
             // 
             this.mnuDN.ImageTransparentColor = System.Drawing.Color.Black;
             this.mnuDN.Name = "mnuDN";
-            this.mnuDN.Size = new System.Drawing.Size(177, 22);
+            this.mnuDN.Size = new System.Drawing.Size(180, 22);
             this.mnuDN.Text = "Đăng nhập";
             // 
             // mnuDoiMK
             // 
             this.mnuDoiMK.Name = "mnuDoiMK";
-            this.mnuDoiMK.Size = new System.Drawing.Size(177, 22);
+            this.mnuDoiMK.Size = new System.Drawing.Size(180, 22);
             this.mnuDoiMK.Text = "Đổi mật khẩu";
             // 
             // mnuQuanlinguoidung
             // 
             this.mnuQuanlinguoidung.Name = "mnuQuanlinguoidung";
-            this.mnuQuanlinguoidung.Size = new System.Drawing.Size(177, 22);
+            this.mnuQuanlinguoidung.Size = new System.Drawing.Size(180, 22);
             this.mnuQuanlinguoidung.Text = "Quản lí người dùng";
             // 
             // mnuDX
@@ -260,17 +252,17 @@ namespace Project_SV
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(177, 22);
+            this.mnuExit.Size = new System.Drawing.Size(180, 22);
             this.mnuExit.Text = "E&xit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -287,21 +279,21 @@ namespace Project_SV
             // mnuMon
             // 
             this.mnuMon.Name = "mnuMon";
-            this.mnuMon.Size = new System.Drawing.Size(122, 22);
+            this.mnuMon.Size = new System.Drawing.Size(180, 22);
             this.mnuMon.Text = "Môn học";
             this.mnuMon.Click += new System.EventHandler(this.mnuMon_Click);
             // 
             // mnuKhoa
             // 
             this.mnuKhoa.Name = "mnuKhoa";
-            this.mnuKhoa.Size = new System.Drawing.Size(122, 22);
+            this.mnuKhoa.Size = new System.Drawing.Size(180, 22);
             this.mnuKhoa.Text = "Khoa";
             this.mnuKhoa.Click += new System.EventHandler(this.mnuKhoa_Click);
             // 
             // mnuLop
             // 
             this.mnuLop.Name = "mnuLop";
-            this.mnuLop.Size = new System.Drawing.Size(122, 22);
+            this.mnuLop.Size = new System.Drawing.Size(180, 22);
             this.mnuLop.Text = "Lớp";
             this.mnuLop.Click += new System.EventHandler(this.mnuLop_Click);
             // 
@@ -310,10 +302,7 @@ namespace Project_SV
             this.mnuItemQuanli.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSV,
             this.mnuGV,
-            this.mnuDiem,
-            this.mnuTL,
-            this.mnuHL,
-            this.mnuDSTL});
+            this.mnuDiem});
             this.mnuItemQuanli.Name = "mnuItemQuanli";
             this.mnuItemQuanli.Size = new System.Drawing.Size(60, 20);
             this.mnuItemQuanli.Text = "Quản lí ";
@@ -321,38 +310,20 @@ namespace Project_SV
             // mnuSV
             // 
             this.mnuSV.Name = "mnuSV";
-            this.mnuSV.Size = new System.Drawing.Size(177, 22);
+            this.mnuSV.Size = new System.Drawing.Size(180, 22);
             this.mnuSV.Text = "Sinh viên";
             // 
             // mnuGV
             // 
             this.mnuGV.Name = "mnuGV";
-            this.mnuGV.Size = new System.Drawing.Size(177, 22);
+            this.mnuGV.Size = new System.Drawing.Size(180, 22);
             this.mnuGV.Text = "Giảng viên";
             // 
             // mnuDiem
             // 
             this.mnuDiem.Name = "mnuDiem";
-            this.mnuDiem.Size = new System.Drawing.Size(177, 22);
+            this.mnuDiem.Size = new System.Drawing.Size(180, 22);
             this.mnuDiem.Text = "Điểm môn học";
-            // 
-            // mnuTL
-            // 
-            this.mnuTL.Name = "mnuTL";
-            this.mnuTL.Size = new System.Drawing.Size(177, 22);
-            this.mnuTL.Text = "Thi lại";
-            // 
-            // mnuHL
-            // 
-            this.mnuHL.Name = "mnuHL";
-            this.mnuHL.Size = new System.Drawing.Size(177, 22);
-            this.mnuHL.Text = "Học lại";
-            // 
-            // mnuDSTL
-            // 
-            this.mnuDSTL.Name = "mnuDSTL";
-            this.mnuDSTL.Size = new System.Drawing.Size(177, 22);
-            this.mnuDSTL.Text = "Danh sách SV thi lại";
             // 
             // mnuItemtimkiem
             // 
@@ -365,7 +336,7 @@ namespace Project_SV
             // mnuThongtinSV
             // 
             this.mnuThongtinSV.Name = "mnuThongtinSV";
-            this.mnuThongtinSV.Size = new System.Drawing.Size(163, 22);
+            this.mnuThongtinSV.Size = new System.Drawing.Size(180, 22);
             this.mnuThongtinSV.Text = "Thông tin của SV";
             // 
             // mnuItemThongKe
@@ -404,7 +375,7 @@ namespace Project_SV
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusBarToolStripMenuItem.Text = "&Status Bar";
             // 
             // menuBarToolStripMenuItem
@@ -413,7 +384,7 @@ namespace Project_SV
             this.menuBarToolStripMenuItem.CheckOnClick = true;
             this.menuBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuBarToolStripMenuItem.Name = "menuBarToolStripMenuItem";
-            this.menuBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.menuBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.menuBarToolStripMenuItem.Text = "Menu Bar";
             // 
             // helpMenu
@@ -495,8 +466,6 @@ namespace Project_SV
         }
 
         #endregion
-
-        private QLSVDataSet1TableAdapters.chuongtrinhTableAdapter chuongtrinhTableAdapter1;
         private System.Windows.Forms.Button btnkhoa;
         private System.Windows.Forms.Button btnkhoahoc;
         private System.Windows.Forms.Button btnchuongtrinh;
@@ -525,9 +494,6 @@ namespace Project_SV
         private System.Windows.Forms.ToolStripMenuItem mnuSV;
         private System.Windows.Forms.ToolStripMenuItem mnuGV;
         private System.Windows.Forms.ToolStripMenuItem mnuDiem;
-        private System.Windows.Forms.ToolStripMenuItem mnuTL;
-        private System.Windows.Forms.ToolStripMenuItem mnuHL;
-        private System.Windows.Forms.ToolStripMenuItem mnuDSTL;
         public System.Windows.Forms.ToolStripMenuItem mnuItemtimkiem;
         private System.Windows.Forms.ToolStripMenuItem mnuThongtinSV;
         private System.Windows.Forms.ToolStripMenuItem mnuItemThongKe;

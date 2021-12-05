@@ -121,10 +121,9 @@ namespace Project_SV
             this.btnkhongghi.Location = new System.Drawing.Point(10, 94);
             this.btnkhongghi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnkhongghi.Name = "btnkhongghi";
-            this.btnkhongghi.Size = new System.Drawing.Size(168, 54);
+            this.btnkhongghi.Size = new System.Drawing.Size(138, 54);
             this.btnkhongghi.TabIndex = 12;
             this.btnkhongghi.Text = "Không ghi";
-            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnkhongghi.UseVisualStyleBackColor = true;
             this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
             // 
@@ -136,10 +135,9 @@ namespace Project_SV
             this.btnghi.Location = new System.Drawing.Point(10, 27);
             this.btnghi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnghi.Name = "btnghi";
-            this.btnghi.Size = new System.Drawing.Size(168, 54);
+            this.btnghi.Size = new System.Drawing.Size(138, 54);
             this.btnghi.TabIndex = 13;
             this.btnghi.Text = "Ghi";
-            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnghi.UseVisualStyleBackColor = true;
             this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
             // 
@@ -150,10 +148,9 @@ namespace Project_SV
             this.btnxoa.Location = new System.Drawing.Point(10, 161);
             this.btnxoa.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(168, 54);
+            this.btnxoa.Size = new System.Drawing.Size(138, 54);
             this.btnxoa.TabIndex = 11;
             this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
@@ -164,10 +161,9 @@ namespace Project_SV
             this.btnsua.Location = new System.Drawing.Point(10, 94);
             this.btnsua.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(168, 54);
+            this.btnsua.Size = new System.Drawing.Size(138, 54);
             this.btnsua.TabIndex = 10;
             this.btnsua.Text = "Sửa";
-            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
@@ -178,10 +174,9 @@ namespace Project_SV
             this.btnthem.Location = new System.Drawing.Point(10, 27);
             this.btnthem.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(168, 54);
+            this.btnthem.Size = new System.Drawing.Size(138, 54);
             this.btnthem.TabIndex = 9;
             this.btnthem.Text = "Thêm";
-            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
@@ -249,7 +244,7 @@ namespace Project_SV
             this.btnfrmmain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnfrmmain.Location = new System.Drawing.Point(10, 226);
             this.btnfrmmain.Name = "btnfrmmain";
-            this.btnfrmmain.Size = new System.Drawing.Size(168, 54);
+            this.btnfrmmain.Size = new System.Drawing.Size(138, 54);
             this.btnfrmmain.TabIndex = 18;
             this.btnfrmmain.Text = "Form main";
             this.btnfrmmain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

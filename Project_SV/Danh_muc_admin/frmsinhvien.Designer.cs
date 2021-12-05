@@ -157,7 +157,7 @@ namespace Project_SV
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(87, 35);
+            this.txttimkiem.Location = new System.Drawing.Point(104, 38);
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(207, 26);
             this.txttimkiem.TabIndex = 31;
@@ -222,6 +222,8 @@ namespace Project_SV
             // 
             // cmbmalop
             // 
+            this.cmbmalop.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbmalop.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbmalop.FormattingEnabled = true;
             this.cmbmalop.Location = new System.Drawing.Point(104, 195);
             this.cmbmalop.Name = "cmbmalop";
@@ -279,6 +281,8 @@ namespace Project_SV
             // 
             // cmb_gioi_tinh
             // 
+            this.cmb_gioi_tinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_gioi_tinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_gioi_tinh.FormattingEnabled = true;
             this.cmb_gioi_tinh.Items.AddRange(new object[] {
             "Nam",
@@ -329,7 +333,6 @@ namespace Project_SV
             this.btnghi.Size = new System.Drawing.Size(132, 54);
             this.btnghi.TabIndex = 29;
             this.btnghi.Text = "Ghi";
-            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnghi.UseVisualStyleBackColor = true;
             this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
             // 
@@ -343,7 +346,6 @@ namespace Project_SV
             this.btnthem.Size = new System.Drawing.Size(132, 54);
             this.btnthem.TabIndex = 25;
             this.btnthem.Text = "Thêm";
-            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
@@ -357,7 +359,6 @@ namespace Project_SV
             this.btnsua.Size = new System.Drawing.Size(132, 54);
             this.btnsua.TabIndex = 26;
             this.btnsua.Text = "Sửa";
-            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
@@ -384,7 +385,6 @@ namespace Project_SV
             this.btnxoa.Size = new System.Drawing.Size(132, 54);
             this.btnxoa.TabIndex = 27;
             this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
@@ -398,7 +398,6 @@ namespace Project_SV
             this.btnkhongghi.Size = new System.Drawing.Size(132, 54);
             this.btnkhongghi.TabIndex = 28;
             this.btnkhongghi.Text = "Không ghi";
-            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnkhongghi.UseVisualStyleBackColor = true;
             this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
             // 
@@ -408,7 +407,7 @@ namespace Project_SV
             this.groupBox4.Controls.Add(this.radioButton1);
             this.groupBox4.Location = new System.Drawing.Point(885, 359);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 100);
+            this.groupBox4.Size = new System.Drawing.Size(89, 92);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giới tính";

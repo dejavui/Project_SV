@@ -47,15 +47,6 @@ namespace Project_SV
             this.txttinchi = new System.Windows.Forms.TextBox();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.grGiangKhoa = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_ct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nam_hoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoc_ky = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.so_tiet_ly_thuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.so_tiet_thuc_hanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.so_tin_chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,6 +56,15 @@ namespace Project_SV
             this.btnmain = new System.Windows.Forms.Button();
             this.btnreload = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_ct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nam_hoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoc_ky = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.so_tiet_ly_thuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.so_tiet_thuc_hanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.so_tin_chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grGiangKhoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +104,7 @@ namespace Project_SV
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(223, 139);
+            this.label9.Location = new System.Drawing.Point(23, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 20);
             this.label9.TabIndex = 30;
@@ -113,7 +113,7 @@ namespace Project_SV
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(632, 139);
+            this.label8.Location = new System.Drawing.Point(420, 147);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 20);
             this.label8.TabIndex = 29;
@@ -122,7 +122,7 @@ namespace Project_SV
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(968, 139);
+            this.label7.Location = new System.Drawing.Point(819, 147);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 20);
             this.label7.TabIndex = 32;
@@ -131,7 +131,7 @@ namespace Project_SV
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(809, 139);
+            this.label4.Location = new System.Drawing.Point(632, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 28;
@@ -139,23 +139,23 @@ namespace Project_SV
             // 
             // txtlyhtuyet
             // 
-            this.txtlyhtuyet.Location = new System.Drawing.Point(636, 167);
+            this.txtlyhtuyet.Location = new System.Drawing.Point(424, 175);
             this.txtlyhtuyet.Multiline = true;
             this.txtlyhtuyet.Name = "txtlyhtuyet";
-            this.txtlyhtuyet.Size = new System.Drawing.Size(136, 29);
+            this.txtlyhtuyet.Size = new System.Drawing.Size(159, 29);
             this.txtlyhtuyet.TabIndex = 23;
             // 
             // txtnamhoc
             // 
-            this.txtnamhoc.Location = new System.Drawing.Point(223, 167);
+            this.txtnamhoc.Location = new System.Drawing.Point(27, 175);
             this.txtnamhoc.Multiline = true;
             this.txtnamhoc.Name = "txtnamhoc";
-            this.txtnamhoc.Size = new System.Drawing.Size(159, 29);
+            this.txtnamhoc.Size = new System.Drawing.Size(136, 29);
             this.txtnamhoc.TabIndex = 22;
             // 
             // txtthuchanh
             // 
-            this.txtthuchanh.Location = new System.Drawing.Point(813, 167);
+            this.txtthuchanh.Location = new System.Drawing.Point(636, 175);
             this.txtthuchanh.Multiline = true;
             this.txtthuchanh.Name = "txtthuchanh";
             this.txtthuchanh.Size = new System.Drawing.Size(136, 29);
@@ -163,7 +163,7 @@ namespace Project_SV
             // 
             // txthocky
             // 
-            this.txthocky.Location = new System.Drawing.Point(420, 167);
+            this.txthocky.Location = new System.Drawing.Point(223, 175);
             this.txthocky.Multiline = true;
             this.txthocky.Name = "txthocky";
             this.txthocky.Size = new System.Drawing.Size(163, 29);
@@ -172,7 +172,7 @@ namespace Project_SV
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(420, 139);
+            this.label3.Location = new System.Drawing.Point(223, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 27;
@@ -198,7 +198,7 @@ namespace Project_SV
             // 
             // txttinchi
             // 
-            this.txttinchi.Location = new System.Drawing.Point(972, 167);
+            this.txttinchi.Location = new System.Drawing.Point(823, 175);
             this.txttinchi.Multiline = true;
             this.txttinchi.Name = "txttinchi";
             this.txttinchi.Size = new System.Drawing.Size(136, 29);
@@ -237,73 +237,6 @@ namespace Project_SV
             this.grGiangKhoa.Size = new System.Drawing.Size(1157, 292);
             this.grGiangKhoa.TabIndex = 18;
             this.grGiangKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grGiangKhoa_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ten_ct
-            // 
-            this.ten_ct.DataPropertyName = "ten_ct";
-            this.ten_ct.HeaderText = "Tên chương trình";
-            this.ten_ct.Name = "ten_ct";
-            this.ten_ct.ReadOnly = true;
-            // 
-            // ten_khoa
-            // 
-            this.ten_khoa.DataPropertyName = "ten_khoa";
-            this.ten_khoa.HeaderText = "Tên khoa";
-            this.ten_khoa.Name = "ten_khoa";
-            this.ten_khoa.ReadOnly = true;
-            this.ten_khoa.Width = 150;
-            // 
-            // ten_mh
-            // 
-            this.ten_mh.DataPropertyName = "ten_mh";
-            this.ten_mh.HeaderText = "Tên môn học";
-            this.ten_mh.Name = "ten_mh";
-            this.ten_mh.ReadOnly = true;
-            this.ten_mh.Width = 150;
-            // 
-            // nam_hoc
-            // 
-            this.nam_hoc.DataPropertyName = "nam_hoc";
-            this.nam_hoc.HeaderText = "Năm học";
-            this.nam_hoc.Name = "nam_hoc";
-            this.nam_hoc.ReadOnly = true;
-            // 
-            // hoc_ky
-            // 
-            this.hoc_ky.DataPropertyName = "hoc_ky";
-            this.hoc_ky.HeaderText = "Học kỳ";
-            this.hoc_ky.Name = "hoc_ky";
-            this.hoc_ky.ReadOnly = true;
-            // 
-            // so_tiet_ly_thuyet
-            // 
-            this.so_tiet_ly_thuyet.DataPropertyName = "so_tiet_ly_thuyet";
-            this.so_tiet_ly_thuyet.HeaderText = "Số tiết lý thuyết";
-            this.so_tiet_ly_thuyet.Name = "so_tiet_ly_thuyet";
-            this.so_tiet_ly_thuyet.ReadOnly = true;
-            this.so_tiet_ly_thuyet.Width = 150;
-            // 
-            // so_tiet_thuc_hanh
-            // 
-            this.so_tiet_thuc_hanh.DataPropertyName = "so_tiet_thuc_hanh";
-            this.so_tiet_thuc_hanh.HeaderText = "Số tiết thực hành";
-            this.so_tiet_thuc_hanh.Name = "so_tiet_thuc_hanh";
-            this.so_tiet_thuc_hanh.ReadOnly = true;
-            this.so_tiet_thuc_hanh.Width = 150;
-            // 
-            // so_tin_chi
-            // 
-            this.so_tin_chi.DataPropertyName = "so_tin_chi";
-            this.so_tin_chi.HeaderText = "Số tín chỉ";
-            this.so_tin_chi.Name = "so_tin_chi";
-            this.so_tin_chi.ReadOnly = true;
             // 
             // label5
             // 
@@ -373,6 +306,7 @@ namespace Project_SV
             // 
             // btnmain
             // 
+            this.btnmain.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnmain.Image = global::Project_SV.Properties.Resources.out2;
             this.btnmain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnmain.Location = new System.Drawing.Point(384, 537);
@@ -408,11 +342,82 @@ namespace Project_SV
             this.btnluu.UseVisualStyleBackColor = true;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // ten_ct
+            // 
+            this.ten_ct.DataPropertyName = "ten_ct";
+            this.ten_ct.HeaderText = "Tên chương trình";
+            this.ten_ct.Name = "ten_ct";
+            this.ten_ct.ReadOnly = true;
+            this.ten_ct.Width = 160;
+            // 
+            // ten_khoa
+            // 
+            this.ten_khoa.DataPropertyName = "ten_khoa";
+            this.ten_khoa.HeaderText = "Tên khoa";
+            this.ten_khoa.Name = "ten_khoa";
+            this.ten_khoa.ReadOnly = true;
+            this.ten_khoa.Width = 140;
+            // 
+            // ten_mh
+            // 
+            this.ten_mh.DataPropertyName = "ten_mh";
+            this.ten_mh.HeaderText = "Tên môn học";
+            this.ten_mh.Name = "ten_mh";
+            this.ten_mh.ReadOnly = true;
+            this.ten_mh.Width = 150;
+            // 
+            // nam_hoc
+            // 
+            this.nam_hoc.DataPropertyName = "nam_hoc";
+            this.nam_hoc.HeaderText = "Năm học";
+            this.nam_hoc.Name = "nam_hoc";
+            this.nam_hoc.ReadOnly = true;
+            // 
+            // hoc_ky
+            // 
+            this.hoc_ky.DataPropertyName = "hoc_ky";
+            this.hoc_ky.HeaderText = "Học kỳ";
+            this.hoc_ky.Name = "hoc_ky";
+            this.hoc_ky.ReadOnly = true;
+            this.hoc_ky.Width = 90;
+            // 
+            // so_tiet_ly_thuyet
+            // 
+            this.so_tiet_ly_thuyet.DataPropertyName = "so_tiet_ly_thuyet";
+            this.so_tiet_ly_thuyet.HeaderText = "Số tiết lý thuyết";
+            this.so_tiet_ly_thuyet.Name = "so_tiet_ly_thuyet";
+            this.so_tiet_ly_thuyet.ReadOnly = true;
+            this.so_tiet_ly_thuyet.Width = 150;
+            // 
+            // so_tiet_thuc_hanh
+            // 
+            this.so_tiet_thuc_hanh.DataPropertyName = "so_tiet_thuc_hanh";
+            this.so_tiet_thuc_hanh.HeaderText = "Số tiết thực hành";
+            this.so_tiet_thuc_hanh.Name = "so_tiet_thuc_hanh";
+            this.so_tiet_thuc_hanh.ReadOnly = true;
+            this.so_tiet_thuc_hanh.Width = 160;
+            // 
+            // so_tin_chi
+            // 
+            this.so_tin_chi.DataPropertyName = "so_tin_chi";
+            this.so_tin_chi.HeaderText = "Số tín chỉ";
+            this.so_tin_chi.Name = "so_tin_chi";
+            this.so_tin_chi.ReadOnly = true;
+            // 
             // frmgiangkhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelButton = this.btnmain;
             this.ClientSize = new System.Drawing.Size(1185, 633);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtid);

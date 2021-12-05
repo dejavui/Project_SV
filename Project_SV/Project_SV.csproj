@@ -122,6 +122,12 @@
     <Compile Include="Danh_muc_admin\frm_tao_tai_khoan_cho_sv.Designer.cs">
       <DependentUpon>frm_tao_tai_khoan_cho_sv.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_tim_kiem_sv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tim_kiem_sv.Designer.cs">
+      <DependentUpon>frm_tim_kiem_sv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Danh_muc_admin\frm_doi_mk.resx">
       <DependentUpon>frm_doi_mk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tim_kiem_sv.resx">
+      <DependentUpon>frm_tim_kiem_sv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>

@@ -68,7 +68,7 @@ namespace Project_SV
             this.grmonhoc.Name = "grmonhoc";
             this.grmonhoc.ReadOnly = true;
             this.grmonhoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grmonhoc.Size = new System.Drawing.Size(493, 293);
+            this.grmonhoc.Size = new System.Drawing.Size(493, 513);
             this.grmonhoc.TabIndex = 0;
             this.grmonhoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grmonhoc_CellClick);
             // 
@@ -106,7 +106,6 @@ namespace Project_SV
             this.btnkhongghi.Size = new System.Drawing.Size(137, 54);
             this.btnkhongghi.TabIndex = 12;
             this.btnkhongghi.Text = "Không ghi";
-            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnkhongghi.UseVisualStyleBackColor = true;
             this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
             // 
@@ -121,7 +120,6 @@ namespace Project_SV
             this.btnghi.Size = new System.Drawing.Size(137, 54);
             this.btnghi.TabIndex = 13;
             this.btnghi.Text = "Ghi";
-            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnghi.UseVisualStyleBackColor = true;
             this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
             // 
@@ -135,7 +133,6 @@ namespace Project_SV
             this.btnxoa.Size = new System.Drawing.Size(137, 54);
             this.btnxoa.TabIndex = 11;
             this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
@@ -149,7 +146,6 @@ namespace Project_SV
             this.btnsua.Size = new System.Drawing.Size(137, 54);
             this.btnsua.TabIndex = 10;
             this.btnsua.Text = "Sửa";
-            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
@@ -163,7 +159,6 @@ namespace Project_SV
             this.btnthem.Size = new System.Drawing.Size(137, 54);
             this.btnthem.TabIndex = 9;
             this.btnthem.Text = "Thêm";
-            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
@@ -232,9 +227,9 @@ namespace Project_SV
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(6, 25);
+            this.txttimkiem.Location = new System.Drawing.Point(10, 25);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(168, 26);
+            this.txttimkiem.Size = new System.Drawing.Size(275, 26);
             this.txttimkiem.TabIndex = 4;
             this.txttimkiem.TextChanged += new System.EventHandler(this.txttimkiem_TextChanged);
             // 
@@ -246,9 +241,9 @@ namespace Project_SV
             this.groupBox1.Controls.Add(this.btnfrmmain);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnkhongghi);
-            this.groupBox1.Location = new System.Drawing.Point(513, 14);
+            this.groupBox1.Location = new System.Drawing.Point(513, 232);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 295);
+            this.groupBox1.Size = new System.Drawing.Size(307, 295);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -256,9 +251,9 @@ namespace Project_SV
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txttimkiem);
-            this.groupBox2.Location = new System.Drawing.Point(341, 315);
+            this.groupBox2.Location = new System.Drawing.Point(513, 160);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 67);
+            this.groupBox2.Size = new System.Drawing.Size(307, 66);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -271,9 +266,9 @@ namespace Project_SV
             this.groupBox3.Controls.Add(this.cmbtenkhoa);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(13, 315);
+            this.groupBox3.Location = new System.Drawing.Point(513, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(322, 140);
+            this.groupBox3.Size = new System.Drawing.Size(307, 140);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nhập";
@@ -283,7 +278,7 @@ namespace Project_SV
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(708, 467);
+            this.ClientSize = new System.Drawing.Size(844, 558);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -37,7 +37,6 @@ namespace Project_SV
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnghi = new System.Windows.Forms.Button();
             this.btnfrmmain = new System.Windows.Forms.Button();
@@ -46,9 +45,11 @@ namespace Project_SV
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grchuongtrinh)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // grchuongtrinh
@@ -85,14 +86,14 @@ namespace Project_SV
             // 
             // txtmact
             // 
-            this.txtmact.Location = new System.Drawing.Point(135, 66);
+            this.txtmact.Location = new System.Drawing.Point(135, 25);
             this.txtmact.Name = "txtmact";
             this.txtmact.Size = new System.Drawing.Size(154, 26);
             this.txtmact.TabIndex = 7;
             // 
             // txttenct
             // 
-            this.txttenct.Location = new System.Drawing.Point(136, 104);
+            this.txttenct.Location = new System.Drawing.Point(136, 63);
             this.txttenct.Name = "txttenct";
             this.txttenct.Size = new System.Drawing.Size(154, 26);
             this.txttenct.TabIndex = 8;
@@ -100,7 +101,7 @@ namespace Project_SV
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 107);
+            this.label2.Location = new System.Drawing.Point(7, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 20);
             this.label2.TabIndex = 21;
@@ -110,7 +111,7 @@ namespace Project_SV
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 69);
+            this.label3.Location = new System.Drawing.Point(6, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 20);
             this.label3.TabIndex = 21;
@@ -119,20 +120,11 @@ namespace Project_SV
             // 
             // txttimkiem
             // 
-            this.txttimkiem.Location = new System.Drawing.Point(83, 31);
+            this.txttimkiem.Location = new System.Drawing.Point(12, 24);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(207, 26);
+            this.txttimkiem.Size = new System.Drawing.Size(282, 26);
             this.txttimkiem.TabIndex = 6;
             this.txttimkiem.TextChanged += new System.EventHandler(this.txttimkiem_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Tìm kiếm";
             // 
             // groupBox1
             // 
@@ -142,9 +134,9 @@ namespace Project_SV
             this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnkhongghi);
-            this.groupBox1.Location = new System.Drawing.Point(400, 14);
+            this.groupBox1.Location = new System.Drawing.Point(395, 185);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 302);
+            this.groupBox1.Size = new System.Drawing.Size(309, 304);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -167,7 +159,7 @@ namespace Project_SV
             // 
             this.btnfrmmain.Image = global::Project_SV.Properties.Resources.out2;
             this.btnfrmmain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnfrmmain.Location = new System.Drawing.Point(7, 234);
+            this.btnfrmmain.Location = new System.Drawing.Point(6, 234);
             this.btnfrmmain.Name = "btnfrmmain";
             this.btnfrmmain.Size = new System.Drawing.Size(153, 54);
             this.btnfrmmain.TabIndex = 9;
@@ -229,25 +221,34 @@ namespace Project_SV
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtmact);
             this.groupBox2.Controls.Add(this.txttenct);
-            this.groupBox2.Controls.Add(this.txttimkiem);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(400, 322);
+            this.groupBox2.Location = new System.Drawing.Point(395, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(309, 148);
+            this.groupBox2.Size = new System.Drawing.Size(309, 101);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txttimkiem);
+            this.groupBox3.Location = new System.Drawing.Point(395, 119);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(309, 60);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
             // 
             // frmchuongtrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(724, 503);
+            this.ClientSize = new System.Drawing.Size(711, 563);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grchuongtrinh);
@@ -263,6 +264,8 @@ namespace Project_SV
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -280,11 +283,11 @@ namespace Project_SV
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txttimkiem;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnfrmmain;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma_ct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten_ct;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
