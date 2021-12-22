@@ -30,7 +30,6 @@ namespace Project_SV
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtmasv = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_tao = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@ namespace Project_SV
             this.grlogins = new System.Windows.Forms.DataGridView();
             this.tenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbma_sv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grlogins)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,13 +49,6 @@ namespace Project_SV
             this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã SV";
-            // 
-            // txtmasv
-            // 
-            this.txtmasv.Location = new System.Drawing.Point(141, 13);
-            this.txtmasv.Name = "txtmasv";
-            this.txtmasv.Size = new System.Drawing.Size(250, 29);
-            this.txtmasv.TabIndex = 1;
             // 
             // txthoten
             // 
@@ -129,18 +122,28 @@ namespace Project_SV
             this.hoten.ReadOnly = true;
             this.hoten.Width = 200;
             // 
+            // cmbma_sv
+            // 
+            this.cmbma_sv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbma_sv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbma_sv.FormattingEnabled = true;
+            this.cmbma_sv.Location = new System.Drawing.Point(141, 10);
+            this.cmbma_sv.Name = "cmbma_sv";
+            this.cmbma_sv.Size = new System.Drawing.Size(250, 32);
+            this.cmbma_sv.TabIndex = 40;
+            // 
             // frm_tao_tai_khoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(539, 317);
+            this.Controls.Add(this.cmbma_sv);
             this.Controls.Add(this.grlogins);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btn_tao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txthoten);
-            this.Controls.Add(this.txtmasv);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -159,7 +162,6 @@ namespace Project_SV
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtmasv;
         private System.Windows.Forms.TextBox txthoten;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_tao;
@@ -167,5 +169,6 @@ namespace Project_SV
         private System.Windows.Forms.DataGridView grlogins;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
+        private System.Windows.Forms.ComboBox cmbma_sv;
     }
 }

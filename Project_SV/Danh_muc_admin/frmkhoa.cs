@@ -192,17 +192,12 @@ namespace Project_SV
         private void btnchuyenform_Click(object sender, EventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void frmkhoa_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
     }
 }

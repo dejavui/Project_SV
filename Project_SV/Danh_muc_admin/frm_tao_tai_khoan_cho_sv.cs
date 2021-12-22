@@ -23,6 +23,11 @@ namespace Project_SV
             string sql = "select logins.tenDN,hoten from logins where quyen = 'sinhvien'";
             grlogins.DataSource = kn.taobang(sql);
 
+            string strsv = "select * from sinhvien";
+            cmbma_sv.DataSource = kn.taobang(strsv);
+            cmbma_sv.DisplayMember = "ma_sv";
+            cmbma_sv.ValueMember = "ma_sv";
+
             for (int i = 0; i < grlogins.Rows.Count - 1; i++)
             {
                 if (grlogins.Rows[i].Cells[0].Value.ToString() == txthoten.Text.Trim())
@@ -48,16 +53,21 @@ namespace Project_SV
         private void frm_tao_tai_khoan_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void btn_tao_Click(object sender, EventArgs e)
         {
             try
             {
-            string sql = "insert into logins (tenDN,matkhau,hoten,quyen)values('"+txtmasv.Text.Trim().ToUpper()+"', '123', '"+txthoten.Text.Trim()+"', 'sinhvien')";
+                if (txthoten.Text =="")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên sinh viên","Thông báo");
+                }
+                if (cmbma_sv.SelectedValue.ToString() == "")
+                {
+                    MessageBox.Show("Chưa chọn mã sinh viên","Thông báo");
+                }
+            string sql = "insert into logins (tenDN,matkhau,hoten,quyen)values('"+cmbma_sv.SelectedValue.ToString().ToUpper()+"', '123', '"+txthoten.Text.Trim()+"', 'sinhvien')";
             kn.sqlquery(sql);
             loadgr();
             }

@@ -23,14 +23,15 @@ namespace Project_SV
         {
             string sql = "select tenDN,matkhau,hoten from logins where quyen = 'sinhvien'";
             grtaikhoan.DataSource = kn.taobang(sql);
-            
+
+            string strsv = "select * from sinhvien";
+            cmbma_sv.DataSource = kn.taobang(strsv);
+            cmbma_sv.DisplayMember = "ma_sv";
+            cmbma_sv.ValueMember = "ma_sv";
         }
         private void frm_doi_mk_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void frm_doi_mk_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace Project_SV
                 if (grtaikhoan.RowCount > 1)
                 {
                     int r = grtaikhoan.CurrentCell.RowIndex;
-                    txtmasv.Text = grtaikhoan.Rows[r].Cells[0].Value.ToString();
+                    cmbma_sv.Text = grtaikhoan.Rows[r].Cells[0].Value.ToString();
                 }
             }
             catch (Exception)
@@ -84,6 +85,12 @@ namespace Project_SV
         private void grtaikhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             loaddata();
+        }
+
+        private void cmbma_sv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select tenDN,matkhau,hoten from logins where quyen = 'sinhvien' and tenDN like '%"+cmbma_sv.SelectedValue.ToString()+"%'";
+            grtaikhoan.DataSource = kn.taobang(sql);
         }
     }
 }

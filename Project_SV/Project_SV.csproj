@@ -104,10 +104,10 @@
     <Compile Include="Danh_muc_admin\frmlop.Designer.cs">
       <DependentUpon>frmlop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Danh_muc_member\frm_xem_diem.cs">
+    <Compile Include="Danh_muc_sinhvien\frm_xem_diem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Danh_muc_member\frm_xem_diem.Designer.cs">
+    <Compile Include="Danh_muc_sinhvien\frm_xem_diem.Designer.cs">
       <DependentUpon>frm_xem_diem.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh_muc_admin\frm_doi_mk.cs">
@@ -157,10 +157,10 @@
     <Compile Include="Form main\frmmain_sinhvien.Designer.cs">
       <DependentUpon>frmmain_sinhvien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Danh_muc_member\frm_thong_tin.cs">
+    <Compile Include="Danh_muc_sinhvien\frm_thong_tin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Danh_muc_member\frm_thong_tin.Designer.cs">
+    <Compile Include="Danh_muc_sinhvien\frm_thong_tin.Designer.cs">
       <DependentUpon>frm_thong_tin.cs</DependentUpon>
     </Compile>
     <Compile Include="Form main\frmmain.cs">
@@ -221,10 +221,10 @@
     <EmbeddedResource Include="Danh_muc_admin\frm_quan_ly_tk_he_thong.resx">
       <DependentUpon>frm_quan_ly_tk_he_thong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Danh_muc_member\frm_thong_tin.resx">
+    <EmbeddedResource Include="Danh_muc_sinhvien\frm_thong_tin.resx">
       <DependentUpon>frm_thong_tin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Danh_muc_member\frm_xem_diem.resx">
+    <EmbeddedResource Include="Danh_muc_sinhvien\frm_xem_diem.resx">
       <DependentUpon>frm_xem_diem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh_muc_admin\frm_doi_mk.resx">

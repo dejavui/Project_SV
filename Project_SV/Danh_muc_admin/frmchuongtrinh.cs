@@ -115,9 +115,8 @@ namespace Project_SV
 
         private void btnfrmmain_Click(object sender, EventArgs e)
         {
-            Form frm = new frmmain();
-            this.Hide();
-            frm.Show();
+            kn.myclose();
+            this.Close();
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -165,9 +164,6 @@ namespace Project_SV
         private void frmchuongtrinh_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void btnghi_Click_1(object sender, EventArgs e)

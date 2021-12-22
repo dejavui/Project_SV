@@ -116,9 +116,7 @@ namespace Project_SV
         private void btnfrmmain_Click(object sender, EventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -217,9 +215,6 @@ namespace Project_SV
         private void frmsinhvien_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void rdkhoa_CNTT_CheckedChanged(object sender, EventArgs e)

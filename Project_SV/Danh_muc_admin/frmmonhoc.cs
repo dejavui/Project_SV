@@ -120,9 +120,8 @@ namespace Project_SV
 
         private void btnfrmmain_Click(object sender, EventArgs e)
         {
-            Form frm = new frmmain();
-            frm.Show();
-            this.Hide();
+            kn.myclose();
+            this.Close();
         }
 
         private void grmonhoc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -199,9 +198,6 @@ namespace Project_SV
         private void frmmonhoc_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void cmbtenkhoa_SelectedIndexChanged(object sender, EventArgs e)

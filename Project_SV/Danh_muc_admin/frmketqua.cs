@@ -142,9 +142,6 @@ namespace Project_SV
         private void frmketqua_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void grkq_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -203,9 +200,7 @@ namespace Project_SV
         private void btnthoat_Click_1(object sender, EventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.Show();
+            this.Close();
         }
 
         private void rdkhoa_CNTT_CheckedChanged(object sender, EventArgs e)

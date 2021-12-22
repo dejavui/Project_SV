@@ -31,7 +31,6 @@ namespace Project_SV
         {
             this.btndoimk = new System.Windows.Forms.Button();
             this.txtmk = new System.Windows.Forms.TextBox();
-            this.txtmasv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grtaikhoan = new System.Windows.Forms.DataGridView();
@@ -42,6 +41,7 @@ namespace Project_SV
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbma_sv = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grtaikhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,14 +65,6 @@ namespace Project_SV
             this.txtmk.Name = "txtmk";
             this.txtmk.Size = new System.Drawing.Size(148, 26);
             this.txtmk.TabIndex = 1;
-            // 
-            // txtmasv
-            // 
-            this.txtmasv.Location = new System.Drawing.Point(78, 14);
-            this.txtmasv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtmasv.Name = "txtmasv";
-            this.txtmasv.Size = new System.Drawing.Size(262, 26);
-            this.txtmasv.TabIndex = 0;
             // 
             // label1
             // 
@@ -162,18 +154,29 @@ namespace Project_SV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
+            // cmbma_sv
+            // 
+            this.cmbma_sv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbma_sv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbma_sv.FormattingEnabled = true;
+            this.cmbma_sv.Location = new System.Drawing.Point(192, 17);
+            this.cmbma_sv.Name = "cmbma_sv";
+            this.cmbma_sv.Size = new System.Drawing.Size(148, 28);
+            this.cmbma_sv.TabIndex = 41;
+            this.cmbma_sv.SelectedIndexChanged += new System.EventHandler(this.cmbma_sv_SelectedIndexChanged);
+            // 
             // frm_doi_mk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(450, 359);
+            this.Controls.Add(this.cmbma_sv);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grtaikhoan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtmasv);
             this.Controls.Add(this.txtmk);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -196,7 +199,6 @@ namespace Project_SV
 
         private System.Windows.Forms.Button btndoimk;
         private System.Windows.Forms.TextBox txtmk;
-        private System.Windows.Forms.TextBox txtmasv;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView grtaikhoan;
@@ -207,5 +209,6 @@ namespace Project_SV
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cmbma_sv;
     }
 }

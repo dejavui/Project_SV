@@ -112,9 +112,6 @@ namespace Project_SV
         private void frm_quan_ly_tk_he_thong_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.Show();
         }
     }
 }

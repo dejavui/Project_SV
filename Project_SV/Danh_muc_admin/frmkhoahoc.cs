@@ -194,17 +194,13 @@ namespace Project_SV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form frm = new frmmain();
-            frm.Show();
-            this.Hide();
+            kn.myclose();
+            this.Close();
         }
 
         private void frmkhoahoc_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

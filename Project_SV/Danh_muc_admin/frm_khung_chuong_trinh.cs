@@ -162,8 +162,7 @@ namespace Project_SV
         private void btnmain_Click(object sender, EventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
+            this.Close();
         }
 
         private void grGiangKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -225,9 +224,6 @@ namespace Project_SV
         private void frmgiangkhoa_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmmain();
-            this.Hide();
-            frm.ShowDialog();
         }
     }
 }

@@ -223,50 +223,50 @@ namespace Project_SV
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(174, 6);
             // 
             // mnuDN
             // 
             this.mnuDN.ImageTransparentColor = System.Drawing.Color.Black;
             this.mnuDN.Name = "mnuDN";
-            this.mnuDN.Size = new System.Drawing.Size(180, 22);
+            this.mnuDN.Size = new System.Drawing.Size(177, 22);
             this.mnuDN.Text = "Đăng nhập";
             // 
             // mnuDoiMK
             // 
             this.mnuDoiMK.Name = "mnuDoiMK";
-            this.mnuDoiMK.Size = new System.Drawing.Size(180, 22);
+            this.mnuDoiMK.Size = new System.Drawing.Size(177, 22);
             this.mnuDoiMK.Text = "Đổi mật khẩu";
             this.mnuDoiMK.Click += new System.EventHandler(this.mnuDoiMK_Click);
             // 
             // mnuQuanlinguoidung
             // 
             this.mnuQuanlinguoidung.Name = "mnuQuanlinguoidung";
-            this.mnuQuanlinguoidung.Size = new System.Drawing.Size(180, 22);
+            this.mnuQuanlinguoidung.Size = new System.Drawing.Size(177, 22);
             this.mnuQuanlinguoidung.Text = "Quản lí người dùng";
             // 
             // mnuDX
             // 
             this.mnuDX.ImageTransparentColor = System.Drawing.Color.Black;
             this.mnuDX.Name = "mnuDX";
-            this.mnuDX.Size = new System.Drawing.Size(180, 22);
+            this.mnuDX.Size = new System.Drawing.Size(177, 22);
             this.mnuDX.Text = "Đăng xuất";
             this.mnuDX.Click += new System.EventHandler(this.mnuDX_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(174, 6);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(174, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Size = new System.Drawing.Size(177, 22);
             this.mnuExit.Text = "E&xit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -283,21 +283,21 @@ namespace Project_SV
             // mnuMon
             // 
             this.mnuMon.Name = "mnuMon";
-            this.mnuMon.Size = new System.Drawing.Size(180, 22);
+            this.mnuMon.Size = new System.Drawing.Size(122, 22);
             this.mnuMon.Text = "Môn học";
             this.mnuMon.Click += new System.EventHandler(this.mnuMon_Click);
             // 
             // mnuKhoa
             // 
             this.mnuKhoa.Name = "mnuKhoa";
-            this.mnuKhoa.Size = new System.Drawing.Size(180, 22);
+            this.mnuKhoa.Size = new System.Drawing.Size(122, 22);
             this.mnuKhoa.Text = "Khoa";
             this.mnuKhoa.Click += new System.EventHandler(this.mnuKhoa_Click);
             // 
             // mnuLop
             // 
             this.mnuLop.Name = "mnuLop";
-            this.mnuLop.Size = new System.Drawing.Size(180, 22);
+            this.mnuLop.Size = new System.Drawing.Size(122, 22);
             this.mnuLop.Text = "Lớp";
             this.mnuLop.Click += new System.EventHandler(this.mnuLop_Click);
             // 
@@ -317,6 +317,7 @@ namespace Project_SV
             this.mnuSV.Name = "mnuSV";
             this.mnuSV.Size = new System.Drawing.Size(180, 22);
             this.mnuSV.Text = "Sinh viên";
+            this.mnuSV.Click += new System.EventHandler(this.mnuSV_Click);
             // 
             // mnuGV
             // 
@@ -341,7 +342,7 @@ namespace Project_SV
             // mnuThongtinSV
             // 
             this.mnuThongtinSV.Name = "mnuThongtinSV";
-            this.mnuThongtinSV.Size = new System.Drawing.Size(180, 22);
+            this.mnuThongtinSV.Size = new System.Drawing.Size(163, 22);
             this.mnuThongtinSV.Text = "Thông tin của SV";
             // 
             // mnuItemThongKe
@@ -380,7 +381,7 @@ namespace Project_SV
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.statusBarToolStripMenuItem.Text = "&Status Bar";
             // 
             // menuBarToolStripMenuItem
@@ -389,7 +390,7 @@ namespace Project_SV
             this.menuBarToolStripMenuItem.CheckOnClick = true;
             this.menuBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuBarToolStripMenuItem.Name = "menuBarToolStripMenuItem";
-            this.menuBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.menuBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.menuBarToolStripMenuItem.Text = "Menu Bar";
             // 
             // helpMenu
@@ -404,12 +405,12 @@ namespace Project_SV
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(128, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.aboutToolStripMenuItem.Text = "&About ... ...";
             // 
             // groupBox2

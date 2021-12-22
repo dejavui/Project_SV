@@ -58,7 +58,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmkhoa();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -66,7 +66,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmkhoahoc();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -74,7 +74,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmchuongtrinh();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -83,7 +83,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmsinhvien();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -91,7 +91,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmlop();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -99,7 +99,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmketqua();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -108,7 +108,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmmonhoc();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -116,7 +116,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frm_khung_chuong_trinh();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -136,7 +136,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frm_tao_tai_khoan();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -144,7 +144,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frm_doi_mk();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -157,7 +157,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmmonhoc();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -165,7 +165,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmkhoa();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -173,7 +173,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frmlop();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
         }
 
@@ -197,7 +197,7 @@ namespace Project_SV
         {
             kn.myconn();
             Form frm = new frm_quan_ly_tk_he_thong();
-            this.Hide();
+            //this.Hide();
             frm.ShowDialog();
 
         }
@@ -210,6 +210,14 @@ namespace Project_SV
         private void mnuItemQuanli_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuSV_Click(object sender, EventArgs e)
+        {
+            kn.myconn();
+            Form frm = new frmsinhvien();
+            //this.Hide();
+            frm.ShowDialog();
         }
     }
 }
