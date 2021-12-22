@@ -180,9 +180,9 @@ namespace Project_SV
         private void frmmain_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmlogin();
-            this.Hide();
-            frm.Show();
+            //Form frm = new frmlogin();
+            //this.Hide();
+            //frm.Show();
         }
 
         private void mnuDX_Click(object sender, EventArgs e)

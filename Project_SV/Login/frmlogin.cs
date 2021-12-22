@@ -212,6 +212,7 @@ namespace Project_SV
                 Form frm = new frmmain(txtTenDN.Text.ToUpper());
                 this.Hide();
                 frm.ShowDialog();
+                this.Show();
                 return;
             }
             ID_USERS_sinhvien = getID_sinhvien();
@@ -222,6 +223,7 @@ namespace Project_SV
                 Form frm = new frmmain_sinhvien(txtTenDN.Text.ToUpper());
                 this.Hide();
                 frm.ShowDialog();
+                this.Show();
                 return;
             }
             ID_USERS_thuky = getID_thuky();
@@ -232,6 +234,7 @@ namespace Project_SV
                 Form frm = new frm_thu_ky();
                 this.Hide();
                 frm.ShowDialog();
+                this.Show();
                 return;
             }
             else

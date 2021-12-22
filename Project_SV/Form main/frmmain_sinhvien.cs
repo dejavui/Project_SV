@@ -93,9 +93,9 @@ namespace Project_SV
         private void frmmain_member_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
-            Form frm = new frmlogin();
-            this.Hide();
-            frm.Show();
+            //Form frm = new frmlogin();
+            //this.Hide();
+            //frm.Show();
         }
     }
 }
