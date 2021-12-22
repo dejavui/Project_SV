@@ -21,7 +21,7 @@ namespace Project_SV
         bool flag;
         private void loadgr()
         {
-            string sql = "select ketqua.ma_kq, ketqua.ma_sv,monhoc.ten_mh,ketqua.ma_lop,ketqua.lan_thi,ketqua.diem from ketqua inner join monhoc on ketqua.ma_mh = monhoc.ma_mh";
+            string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa";
             kn.taobang(sql);
             grkq.DataSource = kn.taobang(sql);
 
@@ -32,8 +32,13 @@ namespace Project_SV
 
             string strlop = "select * from lop";
             cmbtenlop.DataSource = kn.taobang(strlop);
-            cmbtenlop.DisplayMember = "ten_khoa";
+            cmbtenlop.DisplayMember = "ten_lop";
             cmbtenlop.ValueMember = "ma_lop";
+
+            string strsv = "select * from sinhvien";
+            cmbma_sv.DataSource = kn.taobang(strsv);
+            cmbma_sv.DisplayMember = "ma_sv";
+            cmbma_sv.ValueMember = "ma_sv";
 
             for (int i = 0; i < grkq.Rows.Count - 1; i++)
             {
@@ -52,7 +57,7 @@ namespace Project_SV
                 {
                 int r = grkq.CurrentCell.RowIndex;
                 txt_ma_kq.Text = grkq.Rows[r].Cells[0].Value.ToString();
-                txttensv.Text = grkq.Rows[r].Cells[1].Value.ToString();
+                cmbma_sv.Text = grkq.Rows[r].Cells[1].Value.ToString();
                 cmbmonhoc.Text = grkq.Rows[r].Cells[2].Value.ToString();
                 cmbtenlop.Text = grkq.Rows[r].Cells[3].Value.ToString();
                 txtlanthi.Text = grkq.Rows[r].Cells[4].Value.ToString();
@@ -82,8 +87,6 @@ namespace Project_SV
         }
         private void resetdata()
         {
-            txt_ma_kq.ResetText();
-            txttensv.ResetText();
             txtlanthi.ResetText();
             txtdiemthi.ResetText();
         }
@@ -97,7 +100,8 @@ namespace Project_SV
             {
                 MessageBox.Show("Kết nối thất bại");
             }
-            loadgr();
+            txt_ma_kq.Enabled = false;
+            rd_toantruong.Checked = true;
             lockcontrol();
             loaddata();
     }
@@ -113,7 +117,7 @@ namespace Project_SV
         {
             try
             {
-                string sql1 = "select ketqua.ma_kq, ketqua.ma_sv,monhoc.ten_mh,ketqua.ma_lop,ketqua.lan_thi,ketqua.diem from ketqua inner join monhoc on ketqua.ma_mh = monhoc.ma_mh where ketqua.ma_kq like '%"+txttimkiemmasv.Text.Trim()+"%' or ketqua.ma_sv like '%"+txttimkiemmasv.Text.Trim()+"%'";
+                string sql1 = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where ketqua.ma_kq like '%" + txttimkiemmasv.Text.Trim()+"%' or ketqua.ma_sv like '%"+txttimkiemmasv.Text.Trim()+"%'";
                 grkq.DataSource = kn.taobang(sql1);
                 loaddata();
             }
@@ -168,7 +172,7 @@ namespace Project_SV
             {
             if (flag == true) // nút thêm
             {
-                string sql2 = ("insert into ketqua(ma_kq,ma_sv,ma_mh,ma_lop,lan_thi,diem)values('"+txt_ma_kq.Text.Trim()+"','" + txttensv.Text.Trim()+"','"+cmbmonhoc.SelectedValue.ToString()+"','"+cmbtenlop.SelectedValue.ToString()+"','"+txtlanthi.Text.Trim()+"','"+txtdiemthi.Text.Trim()+"')");
+                string sql2 = ("insert into ketqua(ma_sv,ma_mh,ma_lop,lan_thi,diem)values('" + cmbma_sv.SelectedValue.ToString()+"','"+cmbmonhoc.SelectedValue.ToString()+"','"+cmbtenlop.SelectedValue.ToString()+"','"+txtlanthi.Text.Trim()+"','"+txtdiemthi.Text.Trim()+"')");
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
@@ -177,16 +181,16 @@ namespace Project_SV
             }
             catch (Exception)
             {
-                MessageBox.Show("Nhập lỗi rồi");
+                MessageBox.Show("Nhập điểm bị lỗi rồi");
             }
         }
 
         private void btnkhongghi_Click(object sender, EventArgs e)
         {
+            
             lockcontrol();
             loadgr();
             loaddata();
-            txttensv.Focus();
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -194,7 +198,6 @@ namespace Project_SV
             flag = true;
             unlockcontrol();
             resetdata();
-            txttensv.Focus();
         }
 
         private void btnthoat_Click_1(object sender, EventArgs e)
@@ -203,6 +206,59 @@ namespace Project_SV
             Form frm = new frmmain();
             this.Hide();
             frm.Show();
+        }
+
+        private void rdkhoa_CNTT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_CNTT.Checked==true)
+            {
+                string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '1'";
+                grkq.DataSource = kn.taobang(sql);
+            }
+        }
+
+        private void rdkhoaDL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoaDL.Checked == true)
+            {
+                string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '2'";
+                grkq.DataSource = kn.taobang(sql);
+            }
+        }
+
+        private void rdkhoaCN_OTO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoaCN_OTO.Checked == true)
+            {
+                string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '3'";
+                grkq.DataSource = kn.taobang(sql);
+            }
+        }
+
+        private void rdkhoa_KINHTE_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_KINHTE.Checked == true)
+            {
+                string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '4'";
+                grkq.DataSource = kn.taobang(sql);
+            }
+        }
+
+        private void rdkhoa_NGONNGU_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_NGONNGU.Checked == true)
+            {
+                string sql = "select ketqua.ma_kq, sinhvien.ma_sv, monhoc.ten_mh,lop.ten_lop,ketqua.lan_thi,ketqua.diem,khoa.ten_khoa from ketqua inner join sinhvien on ketqua.ma_sv = sinhvien.ma_sv inner join monhoc on ketqua.ma_mh = monhoc.ma_mh inner join lop on ketqua.ma_lop = lop.ma_lop inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '5'";
+                grkq.DataSource = kn.taobang(sql);
+            }
+        }
+
+        private void rd_toantruong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rd_toantruong.Checked==true)
+            {
+                loadgr();
+            }
         }
     }
 }

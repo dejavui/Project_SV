@@ -21,13 +21,16 @@ namespace Project_SV
         bool flag;
         private void loadgr()
         {
-            this.sinhvienTableAdapter.Fill(this.qLSVDataSet.sinhvien);
+            string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa";
+            grsinhvien.DataSource = kn.taobang(sql);
+
+            //this.sinhvienTableAdapter.Fill(this.qLSVDataSet.sinhvien);
             string strmalop = "select * from lop";
             cmbmalop.DataSource = kn.taobang(strmalop);
-            cmbmalop.DisplayMember = "Ma_lop";
+            cmbmalop.DisplayMember = "ten_lop";
             cmbmalop.ValueMember = "ma_lop";
 
-            grsinhvien.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //grsinhvien.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             for (int i = 0; i < grsinhvien.Rows.Count - 1; i++)
             {
@@ -106,7 +109,7 @@ namespace Project_SV
                 //throw;
             }
             lockcontrol();
-            loadgr();
+            rd_toantruong.Checked = true;
             loaddata();
         }
 
@@ -133,7 +136,7 @@ namespace Project_SV
         }
         private void timkiem()
         {
-            string timkiem = "select * from sinhvien where ma_sv like '%" + txttimkiem.Text.Trim() + "%' or ho_ten like '%" + txttimkiem.Text.Trim() + "%' or ma_lop like '%" + txttimkiem.Text.Trim() + "%'";
+            string timkiem = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ma_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where sinhvien.ma_sv like '%" + txttimkiem.Text.Trim() + "%' or lop.ma_lop like '%" + txttimkiem.Text.Trim() + "%' or sinhvien.ho_ten like '%" + txttimkiem.Text.Trim() + "%'";
             kn.sqlquery(timkiem);
             grsinhvien.DataSource = kn.taobang(timkiem);
         }
@@ -199,18 +202,8 @@ namespace Project_SV
                     return;
                 }
 
-                string sql3 = "update sinhvien set ho_ten=N'"+txthoten.Text.Trim()+ "',ngay_thang_nam_sinh = '" + dtp_ngay_thang_nam_sinh.Value.ToString("yyyy-MM-dd") + "',gioi_tinh=N'"+cmb_gioi_tinh.SelectedValue.ToString()+"',ma_lop='"+cmbmalop.SelectedValue.ToString()+"',dia_chi='"+txt_dia_chi.Text.Trim()+"' where ma_sv= '"+txtmasv.Text.Trim()+"'";
+                string sql3 = "update sinhvien set ho_ten=N'"+txthoten.Text.Trim()+ "',ngay_thang_nam_sinh = '" + dtp_ngay_thang_nam_sinh.Value.ToString("yyyy-MM-dd") + "',gioi_tinh=N'"+cmb_gioi_tinh.SelectedItem.ToString()+"',ma_lop='"+cmbmalop.SelectedValue.ToString()+"',dia_chi=N'"+txt_dia_chi.Text.Trim()+"' where ma_sv= N'"+txtmasv.Text.Trim()+"'";
                 kn.sqlquery(sql3);
-                //string sql4 = "update sinhvien set ma_sv =N'" + txtmasv.Text.Trim() + "' where ma_sv ='" + txtmasv.Text.Trim() + "'";
-                //kn.sqlquery(sql4);
-                //string sql5 = "update sinhvien set ho_ten =N'" + txthoten.Text.Trim() + "' where ma_sv ='" + txtmasv.Text.Trim() + "'";
-                //kn.sqlquery(sql5);
-                //string sql6 = "update sinhvien set nam_sinh = N'"+txtnamsinh.Text.Trim()+"' where ma_sv ='"+txtmasv.Text.Trim()+"' ";
-                //kn.sqlquery(sql6);
-                //string sql7 = "update sinhvien set gioi_tinh = N'"+txtgioitinh.Text.Trim()+"' where ma_sv = '"+txtmasv.Text.Trim()+"'";
-                //kn.sqlquery(sql7); 
-                //string sql8 = "update sinhvien set ma_lop = '"+cmbmalop.SelectedValue+"' where ma_sv = '"+txtmasv.Text.Trim()+"' ";
-                //kn.sqlquery(sql8);
                 loadgr();
                 loaddata();
             }
@@ -227,6 +220,79 @@ namespace Project_SV
             Form frm = new frmmain();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void rdkhoa_CNTT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_CNTT.Checked == true)
+            {
+                string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '1'";
+                grsinhvien.DataSource = kn.taobang(sql);
+                string strmalop = "select * from lop where ma_khoa= '1'";
+                cmbmalop.DataSource = kn.taobang(strmalop);
+                cmbmalop.DisplayMember = "Ma_lop";
+                cmbmalop.ValueMember = "ma_lop";
+            }
+        }
+
+        private void rdkhoaDL_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoaDL.Checked == true)
+            {
+                string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '2'";
+                grsinhvien.DataSource = kn.taobang(sql);
+                string strmalop = "select * from lop where ma_khoa= '2'";
+                cmbmalop.DataSource = kn.taobang(strmalop);
+                cmbmalop.DisplayMember = "Ma_lop";
+                cmbmalop.ValueMember = "ma_lop";
+            }
+        }
+
+        private void rdkhoaCN_OTO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoaCN_OTO.Checked==true)
+            {
+                string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '3'";
+                grsinhvien.DataSource = kn.taobang(sql);
+                string strmalop = "select * from lop where ma_khoa= '3'";
+                cmbmalop.DataSource = kn.taobang(strmalop);
+                cmbmalop.DisplayMember = "Ma_lop";
+                cmbmalop.ValueMember = "ma_lop";
+            }
+        }
+
+        private void rdkhoa_KINHTE_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_KINHTE.Checked==true)
+            {
+                string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '4'";
+                grsinhvien.DataSource = kn.taobang(sql);
+                string strmalop = "select * from lop where ma_khoa= '4'";
+                cmbmalop.DataSource = kn.taobang(strmalop);
+                cmbmalop.DisplayMember = "Ma_lop";
+                cmbmalop.ValueMember = "ma_lop";
+            }
+        }
+
+        private void rdkhoa_NGONNGU_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdkhoa_NGONNGU.Checked == true)
+            {
+                string sql = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where khoa.ma_khoa = '5'";
+                grsinhvien.DataSource = kn.taobang(sql);
+                string strmalop = "select * from lop where ma_khoa= '5'";
+                cmbmalop.DataSource = kn.taobang(strmalop);
+                cmbmalop.DisplayMember = "Ma_lop";
+                cmbmalop.ValueMember = "ma_lop";
+            }
+        }
+
+        private void rd_toantruong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rd_toantruong.Checked==true)
+            {
+            loadgr();
+            }
         }
     }
 }

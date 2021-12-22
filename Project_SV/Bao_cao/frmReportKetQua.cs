@@ -30,10 +30,10 @@ namespace Project_SV
         {
             this.rpketqua.RefreshReport();
             kn.myconn();
-            string sql = "select ketqua.ma_sv,sinhvien.ho_ten,ngay_thang_nam_sinh,gioi_tinh,ketqua.ma_lop,monhoc.ten_mh,ketqua.lan_thi,diem,giangkhoa.nam_hoc from ketqua inner join sinhvien on ketqua.ma_sv=sinhvien.ma_sv inner join monhoc on monhoc.ma_mh=ketqua.ma_mh inner join giangkhoa on giangkhoa.ma_mh=monhoc.ma_mh where ketqua.ma_sv= '" + message+"' ";
+            string sql = "select ketqua.ma_sv,sinhvien.ho_ten,ngay_thang_nam_sinh,gioi_tinh,ketqua.ma_lop,monhoc.ten_mh,ketqua.lan_thi,diem,khung_chuong_trinh.nam_hoc from ketqua inner join sinhvien on ketqua.ma_sv=sinhvien.ma_sv inner join monhoc on monhoc.ma_mh=ketqua.ma_mh inner join khung_chuong_trinh on khung_chuong_trinh.ma_mh=monhoc.ma_mh where ketqua.ma_sv= '" + message+"' ";
             SqlDataAdapter da = new SqlDataAdapter(sql, kn.conn);
             DataSet ds = new DataSet();
-            da.Fill(ds, "ketqua inner join sinhvien on ketqua.ma_sv=sinhvien.ma_sv inner join monhoc on monhoc.ma_mh=ketqua.ma_mh inner join giangkhoa on giangkhoa.ma_mh=monhoc.ma_mh");
+            da.Fill(ds, "ketqua inner join sinhvien on ketqua.ma_sv=sinhvien.ma_sv inner join monhoc on monhoc.ma_mh=ketqua.ma_mh inner join khung_chuong_trinh on khung_chuong_trinh.ma_mh=monhoc.ma_mh");
             this.rpketqua.LocalReport.ReportEmbeddedResource = "Project_SV.ReportKetQua.rdlc";
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSetKetQua";

@@ -25,7 +25,7 @@ namespace Project_SV
         ketnoidulieu kn = new ketnoidulieu();
         private void frm_thong_tin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form frm = new frmmain_member(message);
+            Form frm = new frmmain_sinhvien(message);
             this.Hide();
             frm.ShowDialog();
         }

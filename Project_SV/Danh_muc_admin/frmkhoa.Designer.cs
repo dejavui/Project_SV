@@ -36,9 +36,7 @@ namespace Project_SV
             this.btnsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnfrmmain = new System.Windows.Forms.Button();
-            this.txtmakhoa = new System.Windows.Forms.TextBox();
             this.txttenkhoa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnghi = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
@@ -140,36 +138,18 @@ namespace Project_SV
             this.btnfrmmain.UseVisualStyleBackColor = true;
             this.btnfrmmain.Click += new System.EventHandler(this.btnchuyenform_Click);
             // 
-            // txtmakhoa
-            // 
-            this.txtmakhoa.Location = new System.Drawing.Point(87, 25);
-            this.txtmakhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtmakhoa.Name = "txtmakhoa";
-            this.txtmakhoa.Size = new System.Drawing.Size(148, 26);
-            this.txtmakhoa.TabIndex = 5;
-            // 
             // txttenkhoa
             // 
-            this.txttenkhoa.Location = new System.Drawing.Point(87, 58);
+            this.txttenkhoa.Location = new System.Drawing.Point(87, 27);
             this.txttenkhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txttenkhoa.Name = "txttenkhoa";
             this.txttenkhoa.Size = new System.Drawing.Size(148, 26);
             this.txttenkhoa.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Mã Khoa";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 61);
+            this.label2.Location = new System.Drawing.Point(6, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 7;
@@ -227,13 +207,11 @@ namespace Project_SV
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtmakhoa);
             this.groupBox2.Controls.Add(this.txttenkhoa);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(420, 292);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(259, 101);
+            this.groupBox2.Size = new System.Drawing.Size(259, 66);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập liệu";
@@ -241,7 +219,7 @@ namespace Project_SV
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txttimkiem);
-            this.groupBox3.Location = new System.Drawing.Point(420, 399);
+            this.groupBox3.Location = new System.Drawing.Point(420, 364);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(259, 64);
             this.groupBox3.TabIndex = 14;
@@ -282,9 +260,7 @@ namespace Project_SV
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnxoa;
-        private System.Windows.Forms.TextBox txtmakhoa;
         private System.Windows.Forms.TextBox txttenkhoa;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnghi;
         private System.Windows.Forms.Button btnkhongghi;

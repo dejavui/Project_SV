@@ -25,10 +25,11 @@ namespace Project_SV
                 string sql = "select * from chuongtrinh";
                 kn.taobang(sql);
                 grchuongtrinh.DataSource = kn.taobang(sql);
-
+                int r = grchuongtrinh.CurrentCell.RowIndex;
+                string ma = grchuongtrinh.Rows[r].Cells[0].Value.ToString();
                 for (int i = 0; i < grchuongtrinh.Rows.Count - 1; i++)
                 {
-                    if (grchuongtrinh.Rows[i].Cells[0].Value.ToString() == txtmact.Text.Trim())
+                    if (grchuongtrinh.Rows[i].Cells[0].Value.ToString() == ma)
                     {
                         grchuongtrinh.CurrentCell = grchuongtrinh.Rows[i].Cells[0];
                         grchuongtrinh.Rows[i].Selected = true;
@@ -47,7 +48,6 @@ namespace Project_SV
                 if (grchuongtrinh.Rows.Count > 1)
                 {
                     int dong = grchuongtrinh.CurrentCell.RowIndex;
-                    txtmact.Text = grchuongtrinh.Rows[dong].Cells[0].Value.ToString();
                     txttenct.Text = grchuongtrinh.Rows[dong].Cells[1].Value.ToString();
                     return;
                 }
@@ -98,7 +98,6 @@ namespace Project_SV
         }
         private void resetdata()
         {
-            txtmact.ResetText();
             txttenct.ResetText();
         }
         private void label1_Click(object sender, EventArgs e)
@@ -106,54 +105,16 @@ namespace Project_SV
 
         }
 
-        private void btnghi_Click(object sender, EventArgs e)
-        {
-            if (flag == true) // nút thêm
-            {
-                string sql1 = "select * from chuongtrinh where ma_ct='" + txtmact.Text.Trim() + "'";
-                SqlCommand cmd = new SqlCommand(sql1, kn.conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    MessageBox.Show("Mã chương trình đã có trong CSDL");
-                    dr.Close();
-                    return;
-                }
-                dr.Close();
-                string sql2 = ("insert into chuongtrinh(ma_ct,ten_ct)values('"+txtmact.Text.Trim()+"', '"+txttenct.Text.Trim()+"')");
-                kn.sqlquery(sql2);
-                loadgr();
-                loaddata();
-                
-            }
-
-            else //ghi nút sửa
-            {
-                if (txtmact.Text.Trim() == "" || txttenct.Text.Trim() == "")
-                {
-                    MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
-                    txtmact.Focus();
-                    return;
-                }
-
-                string sql5 = "update chuongtrinh set ten_ct='" + txttenct.Text.Trim() + "' where ma_ct='" + txtmact.Text.Trim() + "'";
-                kn.sqlquery(sql5);
-                loadgr();
-                loaddata();
-            }
-        }
-
         private void btnkhongghi_Click(object sender, EventArgs e)
         {
             lockcontrol();
             loadgr();
             loaddata();
-            txtmact.Focus();
+            txttenct.Focus();
         }
 
         private void btnfrmmain_Click(object sender, EventArgs e)
         {
-            kn.myclose();
             Form frm = new frmmain();
             this.Hide();
             frm.Show();
@@ -184,7 +145,6 @@ namespace Project_SV
         {
             flag = false;
             unlockcontrol();
-            txtmact.Enabled = false;
         }
 
         private void grchuongtrinh_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -208,6 +168,34 @@ namespace Project_SV
             Form frm = new frmmain();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void btnghi_Click_1(object sender, EventArgs e)
+        {
+            if (flag == true) // nút thêm
+            {
+                string sql2 = ("insert into chuongtrinh(ten_ct)values('" + txttenct.Text.Trim() + "')");
+                kn.sqlquery(sql2);
+                loadgr();
+                loaddata();
+
+            }
+
+            else //ghi nút sửa
+            {
+                if (txttenct.Text.Trim() == "")
+                {
+                    MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
+                    txttenct.Focus();
+                    return;
+                }
+                int r = grchuongtrinh.CurrentCell.RowIndex;
+                string ma = grchuongtrinh.Rows[r].Cells[0].Value.ToString();
+                string sql5 = "update chuongtrinh set ten_ct='" + txttenct.Text.Trim() + "' where ma_ct='" + ma + "'";
+                kn.sqlquery(sql5);
+                loadgr();
+                loaddata();
+            }
         }
     }
 }

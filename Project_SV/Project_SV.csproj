@@ -74,11 +74,11 @@
     <Compile Include="Danh_muc_admin\frmchuongtrinh.Designer.cs">
       <DependentUpon>frmchuongtrinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Danh_muc_admin\frmgiangkhoa.cs">
+    <Compile Include="Danh_muc_admin\frm_khung_chuong_trinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Danh_muc_admin\frmgiangkhoa.Designer.cs">
-      <DependentUpon>frmgiangkhoa.cs</DependentUpon>
+    <Compile Include="Danh_muc_admin\frm_khung_chuong_trinh.Designer.cs">
+      <DependentUpon>frm_khung_chuong_trinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh_muc_admin\frmketqua.cs">
       <SubType>Form</SubType>
@@ -122,6 +122,18 @@
     <Compile Include="Danh_muc_admin\frm_tao_tai_khoan_cho_sv.Designer.cs">
       <DependentUpon>frm_tao_tai_khoan_cho_sv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Danh_muc_admin\frm_quan_ly_tk_he_thong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh_muc_admin\frm_quan_ly_tk_he_thong.Designer.cs">
+      <DependentUpon>frm_quan_ly_tk_he_thong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danh_muc_thuky\frmmain_thu_ky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh_muc_thuky\frmmain_thu_ky.Designer.cs">
+      <DependentUpon>frmmain_thu_ky.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_tim_kiem_sv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSVDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="System\frmmain_member.cs">
+    <Compile Include="Form main\frmmain_sinhvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="System\frmmain_member.Designer.cs">
-      <DependentUpon>frmmain_member.cs</DependentUpon>
+    <Compile Include="Form main\frmmain_sinhvien.Designer.cs">
+      <DependentUpon>frmmain_sinhvien.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh_muc_member\frm_thong_tin.cs">
       <SubType>Form</SubType>
@@ -151,10 +163,10 @@
     <Compile Include="Danh_muc_member\frm_thong_tin.Designer.cs">
       <DependentUpon>frm_thong_tin.cs</DependentUpon>
     </Compile>
-    <Compile Include="System\frmmain.cs">
+    <Compile Include="Form main\frmmain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="System\frmmain.Designer.cs">
+    <Compile Include="Form main\frmmain.Designer.cs">
       <DependentUpon>frmmain.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh_muc_admin\frmmonhoc.cs">
@@ -188,8 +200,8 @@
     <EmbeddedResource Include="Danh_muc_admin\frmchuongtrinh.resx">
       <DependentUpon>frmchuongtrinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Danh_muc_admin\frmgiangkhoa.resx">
-      <DependentUpon>frmgiangkhoa.cs</DependentUpon>
+    <EmbeddedResource Include="Danh_muc_admin\frm_khung_chuong_trinh.resx">
+      <DependentUpon>frm_khung_chuong_trinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh_muc_admin\frmketqua.resx">
       <DependentUpon>frmketqua.cs</DependentUpon>
@@ -206,6 +218,9 @@
     <EmbeddedResource Include="Danh_muc_admin\frm_tao_tai_khoan_cho_sv.resx">
       <DependentUpon>frm_tao_tai_khoan_cho_sv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Danh_muc_admin\frm_quan_ly_tk_he_thong.resx">
+      <DependentUpon>frm_quan_ly_tk_he_thong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Danh_muc_member\frm_thong_tin.resx">
       <DependentUpon>frm_thong_tin.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,16 +230,19 @@
     <EmbeddedResource Include="Danh_muc_admin\frm_doi_mk.resx">
       <DependentUpon>frm_doi_mk.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Danh_muc_thuky\frmmain_thu_ky.resx">
+      <DependentUpon>frmmain_thu_ky.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_tim_kiem_sv.resx">
       <DependentUpon>frm_tim_kiem_sv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\frmmain_member.resx">
-      <DependentUpon>frmmain_member.cs</DependentUpon>
+    <EmbeddedResource Include="Form main\frmmain_sinhvien.resx">
+      <DependentUpon>frmmain_sinhvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\frmmain.resx">
+    <EmbeddedResource Include="Form main\frmmain.resx">
       <DependentUpon>frmmain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh_muc_admin\frmmonhoc.resx">
@@ -304,6 +322,8 @@
     <None Include="Resources\config1.png" />
     <None Include="Resources\print-50.png" />
     <None Include="Resources\icon_logo.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\visibility.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

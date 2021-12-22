@@ -34,6 +34,7 @@ namespace Project_SV
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_save_tt = new System.Windows.Forms.CheckBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@ namespace Project_SV
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_save_tt);
             this.groupBox1.Controls.Add(this.txtMatKhau);
             this.groupBox1.Controls.Add(this.cboName);
             this.groupBox1.Controls.Add(this.label4);
@@ -103,6 +105,17 @@ namespace Project_SV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cb_save_tt
+            // 
+            this.cb_save_tt.AutoSize = true;
+            this.cb_save_tt.Location = new System.Drawing.Point(125, 144);
+            this.cb_save_tt.Name = "cb_save_tt";
+            this.cb_save_tt.Size = new System.Drawing.Size(99, 19);
+            this.cb_save_tt.TabIndex = 6;
+            this.cb_save_tt.Text = "Lưu thông tin";
+            this.cb_save_tt.UseVisualStyleBackColor = true;
+            this.cb_save_tt.CheckedChanged += new System.EventHandler(this.cb_save_tt_CheckedChanged);
             // 
             // txtMatKhau
             // 
@@ -190,6 +203,7 @@ namespace Project_SV
             this.Name = "frmlogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmlogin_FormClosed);
             this.Load += new System.EventHandler(this.frmlogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -210,5 +224,6 @@ namespace Project_SV
         private System.Windows.Forms.TextBox txtTenDN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cb_save_tt;
     }
 }

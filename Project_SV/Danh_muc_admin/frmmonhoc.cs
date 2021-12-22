@@ -22,7 +22,7 @@ namespace Project_SV
         bool flag;
         private void loadgr()
         {
-            string sql = "select monhoc.ma_mh,monhoc.ten_mh,khoa.ten_khoa from monhoc inner join khoa on monhoc.ma_khoa = khoa.ma_khoa";
+            string sql = "select monhoc.ma_mh, monhoc.ten_mh, khoa.ten_khoa,chuongtrinh.ten_ct,monhoc.chu_thich from monhoc inner join khoa on khoa.ma_khoa = monhoc.ma_khoa inner join chuongtrinh on chuongtrinh.ma_ct = monhoc.ma_ct";
             kn.taobang(sql);
             grmonhoc.DataSource = kn.taobang(sql);
 
@@ -31,9 +31,17 @@ namespace Project_SV
             cmbtenkhoa.DisplayMember = "ten_khoa";
             cmbtenkhoa.ValueMember = "ma_khoa";
 
+            string strmachuongtrinh = "select * from chuongtrinh";
+            cmbtenchuongtrinh.DataSource = kn.taobang(strmachuongtrinh);
+            cmbtenchuongtrinh.DisplayMember = "ten_ct";
+            cmbtenchuongtrinh.ValueMember = "ma_ct";
+
+            int r = grmonhoc.CurrentCell.RowIndex;
+            string ma = grmonhoc.Rows[r].Cells[0].Value.ToString();
+
             for (int i = 0; i < grmonhoc.Rows.Count - 1; i++)
             {
-                if (grmonhoc.Rows[i].Cells[0].Value.ToString() == txtmamonhoc.Text.Trim())
+                if (grmonhoc.Rows[i].Cells[0].Value.ToString() == ma)
                 {
                     grmonhoc.CurrentCell = grmonhoc.Rows[i].Cells[0];
                     grmonhoc.Rows[i].Selected = true;
@@ -48,9 +56,10 @@ namespace Project_SV
                 if (grmonhoc.Rows.Count > 1)
                 {
                     int dong = grmonhoc.CurrentCell.RowIndex;
-                    txtmamonhoc.Text = grmonhoc.Rows[dong].Cells[0].Value.ToString();
                     txttenmonhoc.Text = grmonhoc.Rows[dong].Cells[1].Value.ToString();
-                    cmbtenkhoa.SelectedValue = grmonhoc.Rows[dong].Cells[2].Value.ToString();
+                    cmbtenkhoa.Text = grmonhoc.Rows[dong].Cells[2].Value.ToString();
+                    cmbtenchuongtrinh.Text = grmonhoc.Rows[dong].Cells[3].Value.ToString();
+                    txtchuthich.Text = grmonhoc.Rows[dong].Cells[4].Value.ToString();
                     return;
                 }
                 MessageBox.Show("Không tìm thấy dữ liệu");
@@ -90,7 +99,6 @@ namespace Project_SV
             catch (Exception)
             {
                 MessageBox.Show("Lỗi kết nối");
-                //throw;
             }
             loadgr();
             loaddata();
@@ -130,7 +138,6 @@ namespace Project_SV
 
         private void btnkhongghi_Click(object sender, EventArgs e)
         {
-            txtmamonhoc.Enabled = true;
             lockcontrol();
             loadgr();
             loaddata();
@@ -138,7 +145,6 @@ namespace Project_SV
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            txtmamonhoc.Enabled = false;
             unlockcontrol();
             flag = false;
         }
@@ -148,41 +154,40 @@ namespace Project_SV
             if (flag == true) // nút thêm
             {
 
-                string sql1 = "select * from monhoc where ma_mh ='" + txtmamonhoc.Text.Trim() + "'";
-                SqlCommand cmd = new SqlCommand(sql1, kn.conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    MessageBox.Show("Mã lớp đã có trong CSDL");
-                    dr.Close();
-                    return;
-                }
-                dr.Close();
-                string sql2 = ("insert into monhoc(ma_mh,ten_mh,ma_khoa)values('"+txtmamonhoc.Text.Trim()+"', '"+txttenmonhoc.Text.Trim()+"', '"+cmbtenkhoa.SelectedValue.ToString()+"')");
+                string sql2 = ("insert into monhoc(ten_mh,ma_khoa,ma_ct,chu_thich)values('"+txttenmonhoc.Text.Trim()+"','"+cmbtenkhoa.SelectedValue.ToString()+"','"+cmbtenchuongtrinh.SelectedValue.ToString()+"','"+txtchuthich.Text.Trim()+"')");
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi thêm dữ liệu","Thông báo");
+                }
 
             }
 
             else //ghi nút sửa
             {
-                if (txtmamonhoc.Text.Trim() == "" || txttenmonhoc.Text.Trim() == "")
+                try
                 {
-                    MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
-                    txtmamonhoc.Focus();
-                    return;
+                    int r = grmonhoc.CurrentCell.RowIndex;
+                    string ma = grmonhoc.Rows[r].Cells[0].Value.ToString();
+                    string sql3 = "update monhoc set ten_mh = '"+txttenmonhoc.Text.Trim()+"', ma_khoa = '"+cmbtenkhoa.SelectedValue.ToString()+"',ma_ct='"+cmbtenchuongtrinh.SelectedValue.ToString()+"',chu_thich='"+txtchuthich.Text.Trim()+"' where ma_mh = '"+ma+"'";
+                    kn.sqlquery(sql3);
+                    loadgr();
+                    loaddata();
                 }
-
-                string sql3 = "update monhoc set ten_mh = '"+txttenmonhoc.Text.Trim()+"', ma_khoa = '"+cmbtenkhoa.SelectedValue.ToString()+"' where ma_mh = '"+txtmamonhoc.Text.Trim()+"'";
-                kn.sqlquery(sql3);
-                loadgr();
-                loaddata();
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi sửa dữ liệu");
+                }
             }
         }
         private void timkiem()
         {
-            string timkiem = "select * from monhoc where ma_mh like '%"+txttimkiem.Text.Trim()+"%' or ten_mh like '%"+txttimkiem.Text.Trim()+"%'";
+            string timkiem = "select monhoc.ma_mh, monhoc.ten_mh, khoa.ten_khoa,chuongtrinh.ten_ct,monhoc.chu_thich from monhoc inner join khoa on khoa.ma_khoa = monhoc.ma_khoa inner join chuongtrinh on chuongtrinh.ma_ct = monhoc.ma_ct where ma_mh like '%"+txttimkiem.Text.Trim()+"%' or ten_mh like '%"+txttimkiem.Text.Trim()+"%' or ten_khoa like '%"+txttimkiem.Text.Trim()+"%'";
             kn.sqlquery(timkiem);
             grmonhoc.DataSource = kn.taobang(timkiem);
         }
@@ -197,6 +202,11 @@ namespace Project_SV
             Form frm = new frmmain();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void cmbtenkhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

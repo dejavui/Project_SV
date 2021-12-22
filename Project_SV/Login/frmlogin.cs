@@ -79,7 +79,7 @@ namespace Project_SV
             using (SqlConnection connection = new SqlConnection("Data Source=FX-MASTER;Initial Catalog=QLSV;Integrated Security=True"))
             {
                 connection.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from logins where tendn='" + txtTenDN.Text.Trim() + "' and matkhau='" + txtMatKhau.Text.Trim() + "' and quyen='member'", connection))
+                using (SqlCommand cmd = new SqlCommand("select * from logins where tendn='" + txtTenDN.Text.Trim() + "' and matkhau='" + txtMatKhau.Text.Trim() + "' and quyen='sinhvien'", connection))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -88,7 +88,7 @@ namespace Project_SV
                             while (reader.Read())
                             {
                                 MessageBox.Show("Đăng nhập vào hệ thống !", "Thông báo !");
-                                Form frm = new frmmain_member();
+                                Form frm = new frmmain_sinhvien();
                                 frm.Show();
                                 this.Hide();
                                 cmd.Dispose();
@@ -132,12 +132,12 @@ namespace Project_SV
             }
             return id;
         }
-        public string getID_member()
+        public string getID_sinhvien()
         {
             string id = "";
             try
             {
-                string sql1 = "select * from logins where tendn='" + txtTenDN.Text.Trim() + "' and matkhau='" + txtMatKhau.Text.Trim() + "' and quyen='member'";
+                string sql1 = "select * from logins where tendn='" + txtTenDN.Text.Trim() + "' and matkhau='" + txtMatKhau.Text.Trim() + "' and quyen='sinhvien'";
                 SqlDataAdapter da = new SqlDataAdapter(sql1, kn.conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -159,35 +159,85 @@ namespace Project_SV
             }
             return id;
         }
+        public string getID_thuky()
+        {
+            string id = "";
+            try
+            {
+                string sql1 = "select * from logins where tendn='" + txtTenDN.Text.Trim() + "' and matkhau='" + txtMatKhau.Text.Trim() + "' and quyen='thuky'";
+                SqlDataAdapter da = new SqlDataAdapter(sql1, kn.conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        id = dr["quyen"].ToString();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
+            }
+            finally
+            {
+                kn.myclose();
+            }
+            return id;
+        }
+
         public static string ID_USERS_admin = "";
-        public static string ID_USERS_member = "";
+        public static string ID_USERS_sinhvien = "";
+        public static string ID_USERS_thuky = "";
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             ID_USERS_admin = getID_admin();
             //loginadmin();
             //loginmember();
+            if (txtTenDN.Text == "")
+            {
+                MessageBox.Show("Không được để trống tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenDN.Focus();
+            }
+            if (txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Không được để trống mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMatKhau.Focus();
+            }
             if (ID_USERS_admin != "")
             {
                 kn.myconn();
                 MessageBox.Show("Đăng nhập thành công với quyền là: " + ID_USERS_admin);
-                Form frm = new frmmain();
+                Form frm = new frmmain(txtTenDN.Text.ToUpper());
                 this.Hide();
                 frm.ShowDialog();
                 return;
             }
-            ID_USERS_member = getID_member();
-            if(ID_USERS_member != "")
+            ID_USERS_sinhvien = getID_sinhvien();
+            if(ID_USERS_sinhvien != "")
             {
                 kn.myconn();
-                MessageBox.Show("Đăng nhập thành công với quyền là: " + ID_USERS_member);
-                Form frm = new frmmain_member(txtTenDN.Text.ToUpper());
+                MessageBox.Show("Đăng nhập thành công với quyền là: " + ID_USERS_sinhvien);
+                Form frm = new frmmain_sinhvien(txtTenDN.Text.ToUpper());
+                this.Hide();
+                frm.ShowDialog();
+                return;
+            }
+            ID_USERS_thuky = getID_thuky();
+            if (ID_USERS_thuky != "")
+            {
+                kn.myconn();
+                MessageBox.Show("Đăng nhập thành công với quyền là: " + ID_USERS_thuky);
+                Form frm = new frm_thu_ky();
                 this.Hide();
                 frm.ShowDialog();
                 return;
             }
             else
             {
-                MessageBox.Show("Tài khoản mật khẩu không đúng!!!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!!!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtMatKhau.Focus();
             }
 
         }
@@ -205,6 +255,21 @@ namespace Project_SV
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmlogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        public static string taikhoan;
+        public static string matkhau;
+        private void cb_save_tt_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_save_tt.Checked == true)
+            {
+
+            }
+            
         }
     }
 }

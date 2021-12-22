@@ -104,6 +104,7 @@ namespace Project_SV
             this.hoten});
             this.grtaikhoan.Location = new System.Drawing.Point(12, 197);
             this.grtaikhoan.Name = "grtaikhoan";
+            this.grtaikhoan.ReadOnly = true;
             this.grtaikhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grtaikhoan.Size = new System.Drawing.Size(423, 150);
             this.grtaikhoan.TabIndex = 4;

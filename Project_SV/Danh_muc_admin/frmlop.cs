@@ -26,40 +26,32 @@ namespace Project_SV
         }
         private void loadgr()
         {
-            this.lopTableAdapter.Fill(this.qLSVDataSet1.lop);
+            string sql = "select lop.ma_lop, lop.ten_lop, khoa.ten_khoa, khoahoc.ten_khoa_hoc, chuongtrinh.ten_ct,lop.STT from lop inner join khoa on khoa.ma_khoa = lop.ma_khoa inner join khoahoc on khoahoc.ma_khoa_hoc = lop.ma_khoa_hoc inner join chuongtrinh on chuongtrinh.ma_ct = lop.ma_ct";
+            grlop.DataSource = kn.taobang(sql);
 
             string strmalop = "select * from lop";
             cmbtenkhoa.DataSource = kn.taobang(strmalop);
-            cmbtenkhoa.DisplayMember = "Mã lớp";
+            cmbtenkhoa.DisplayMember = "ten_lop";
             cmbtenkhoa.ValueMember = "ma_lop";
 
             string strmakhoahoc = "select * from khoahoc";
             cmbmakhoahoc.DataSource = kn.taobang(strmakhoahoc);
-            cmbmakhoahoc.DisplayMember = "Mã khóa học";
+            cmbmakhoahoc.DisplayMember = "ten_khoa_hoc";
             cmbmakhoahoc.ValueMember = "ma_khoa_hoc";
 
-            //string strmakhoa = "select * from khoa";
-            //cmbmakhoa.DataSource = kn.taobang(strmakhoa);
-            //cmbmakhoa.DisplayMember = "Mã khoa";
-            //cmbmakhoa.ValueMember = "ma_khoa";
-
             string strmachuongtrinh = "select * from chuongtrinh";
-            cmbmachuongtrinh.DataSource = kn.taobang(strmachuongtrinh);
-            cmbmachuongtrinh.DisplayMember = "Mã Chương trình";
-            cmbmachuongtrinh.ValueMember = "ma_ct";
+            cmbtenchuongtrinh.DataSource = kn.taobang(strmachuongtrinh);
+            cmbtenchuongtrinh.DisplayMember = "ten_ct";
+            cmbtenchuongtrinh.ValueMember = "ma_ct";
 
             string strkhoa = "select * from khoa";
-            (grlop.Columns[2] as DataGridViewComboBoxColumn).DataSource = kn.taobang(strkhoa);
-            (grlop.Columns[2] as DataGridViewComboBoxColumn).DisplayMember = "ten_khoa";
-            (grlop.Columns[2] as DataGridViewComboBoxColumn).ValueMember = "ma_khoa";
-
             cmbtenkhoa.DataSource = kn.taobang(strkhoa);
             cmbtenkhoa.DisplayMember = "ten_khoa";
             cmbtenkhoa.ValueMember = "ma_khoa";
 
             for (int i = 0; i < grlop.Rows.Count - 1; i++)
             {
-                if (grlop.Rows[i].Cells[0].Value.ToString() == txtmalop.Text)
+                if (grlop.Rows[i].Cells[0].Value.ToString() == txttenlop.Text)
                 {
                     grlop.CurrentCell = grlop.Rows[i].Cells[0];
                     grlop.Rows[i].Selected = true;
@@ -73,12 +65,10 @@ namespace Project_SV
                 if (grlop.Rows.Count > 1)
                 {
                     int dong = grlop.CurrentCell.RowIndex;
-                    txtmalop.Text = grlop.Rows[dong].Cells[0].Value.ToString();
-                    cmbmakhoahoc.Text = grlop.Rows[dong].Cells[1].Value.ToString();
-                    //cmbmakhoa.Text = grlop.Rows[dong].Cells[2].Value.ToString();
-                    cmbtenkhoa.SelectedValue = grlop.Rows[dong].Cells[2].Value.ToString();
-                    cmbmachuongtrinh.Text = grlop.Rows[dong].Cells[3].Value.ToString();
-                    txtstt.Text = grlop.Rows[dong].Cells[4].Value.ToString();
+                    txttenlop.Text = grlop.Rows[dong].Cells[1].Value.ToString();
+                    cmbtenkhoa.Text = grlop.Rows[dong].Cells[2].Value.ToString();
+                    cmbmakhoahoc.Text = grlop.Rows[dong].Cells[3].Value.ToString();
+                    cmbtenchuongtrinh.Text = grlop.Rows[dong].Cells[4].Value.ToString();
                     return;
                 }
                 MessageBox.Show("Không tìm thấy dữ liệu");
@@ -86,7 +76,6 @@ namespace Project_SV
             catch (Exception)
             {
                 return;
-                //throw;
             }
         }
         private void lockcontrol()
@@ -112,11 +101,10 @@ namespace Project_SV
         }
         private void resetdata()
         {
-            txtmalop.ResetText();
+            txttenlop.ResetText();
             cmbmakhoahoc.ResetText();
             cmbtenkhoa.ResetText();
-            cmbmachuongtrinh.ResetText();
-            txtstt.ResetText();
+            cmbtenchuongtrinh.ResetText();
         }
         private void frmlop_Load(object sender, EventArgs e)
         {
@@ -178,43 +166,51 @@ namespace Project_SV
         {
             if (flag == true) // nút thêm
             {
-
-                string sql1 = "select * from lop where ma_lop ='" + txtmalop.Text.Trim() + "'";
-                SqlCommand cmd = new SqlCommand(sql1, kn.conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    MessageBox.Show("Mã lớp đã có trong CSDL");
-                    dr.Close();
-                    return;
-                }
-                dr.Close();
-                string sql2 = ("insert into lop(ma_lop,ma_khoa_hoc,ma_khoa,ma_ct,STT)values('"+txtmalop.Text.Trim()+"', '"+cmbmakhoahoc.SelectedValue.ToString()+"', '"+cmbtenkhoa.SelectedValue.ToString() +"', '"+cmbmachuongtrinh.SelectedValue.ToString() +"', '"+txtstt.Text.Trim()+"')");
+
+                string sql2 = ("insert into lop(ten_lop,ma_khoa_hoc,ma_khoa,ma_ct)values('"+txttenlop.Text.Trim()+"', '"+cmbmakhoahoc.SelectedValue.ToString()+"', '"+cmbtenkhoa.SelectedValue.ToString() +"', '"+cmbtenchuongtrinh.SelectedValue.ToString() +"')");
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi thêm dữ liệu","Thông báo");
+                }
+
 
             }
 
             else //ghi nút sửa
             {
-                if (txtmalop.Text.Trim() == "" || txtstt.Text.Trim() == "")
+                //if (txttenlop.Text.Trim() == "" || txtstt.Text.Trim() == "")
+                //{
+                //    MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
+                //    txttenlop.Focus();
+                //    return;
+                //}
+                try
                 {
-                    MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
-                    txtmalop.Focus();
-                    return;
-                }
-
-                string sql3 = "update lop set ma_khoa_hoc='"+cmbmakhoahoc.SelectedValue.ToString()+"', ma_khoa='"+cmbtenkhoa.SelectedValue.ToString()+"', ma_ct='"+cmbmachuongtrinh.SelectedValue.ToString()+"',STT='"+txtstt.Text.Trim()+"' where ma_lop= '"+txtmalop.Text.Trim()+"'";
+                int r = grlop.CurrentCell.RowIndex;
+                string ma = grlop.Rows[r].Cells[0].Value.ToString();
+                string sql3 = "update lop set ten_lop = '"+txttenlop.Text.Trim()+"' ma_khoa_hoc='"+cmbmakhoahoc.SelectedValue.ToString()+"', ma_khoa='"+cmbtenkhoa.SelectedValue.ToString()+"', ma_ct='"+cmbtenchuongtrinh.SelectedValue.ToString()+"', where ma_lop= '"+txttenlop.Text.Trim()+"'";
                 kn.sqlquery(sql3);
                 loadgr();
                 loaddata();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi sửa","Thông báo");
+                }
             }
         }
 
         private void timkiem()
         {
-            string timkiem = "select * from lop where ma_lop like '%" + txttimkiem.Text.Trim() + "%";
+            string timkiem = "select lop.ma_lop, lop.ten_lop, khoa.ten_khoa, khoahoc.ten_khoa_hoc, chuongtrinh.ten_ct,lop.STT from lop inner join khoa on khoa.ma_khoa = lop.ma_khoa inner join khoahoc on khoahoc.ma_khoa_hoc = lop.ma_khoa_hoc inner join chuongtrinh on chuongtrinh.ma_ct = lop.ma_ct where lop.ma_lop like '%" + txttimkiem.Text.Trim() + "% or khoa.ten_khoa like '%"+txttimkiem.Text.Trim()+"%'";
             kn.sqlquery(timkiem);
             grlop.DataSource = kn.taobang(timkiem);
         }
@@ -234,6 +230,11 @@ namespace Project_SV
             Form frm = new frmmain();
             this.Hide();
             frm.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,16 +31,9 @@ namespace Project_SV
         {
             this.txtdiemthi = new System.Windows.Forms.TextBox();
             this.txtlanthi = new System.Windows.Forms.TextBox();
-            this.txttensv = new System.Windows.Forms.TextBox();
             this.txtmasv = new System.Windows.Forms.TextBox();
             this.txttimkiemmasv = new System.Windows.Forms.TextBox();
             this.grkq = new System.Windows.Forms.DataGridView();
-            this.ma_kq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,10 +51,26 @@ namespace Project_SV
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.btnghi = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rd_toantruong = new System.Windows.Forms.RadioButton();
+            this.rdkhoa_NGONNGU = new System.Windows.Forms.RadioButton();
+            this.rdkhoa_KINHTE = new System.Windows.Forms.RadioButton();
+            this.rdkhoaCN_OTO = new System.Windows.Forms.RadioButton();
+            this.rdkhoaDL = new System.Windows.Forms.RadioButton();
+            this.rdkhoa_CNTT = new System.Windows.Forms.RadioButton();
+            this.cmbma_sv = new System.Windows.Forms.ComboBox();
+            this.ma_kq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grkq)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtdiemthi
@@ -80,14 +89,6 @@ namespace Project_SV
             this.txtlanthi.Size = new System.Drawing.Size(162, 26);
             this.txtlanthi.TabIndex = 17;
             // 
-            // txttensv
-            // 
-            this.txttensv.Location = new System.Drawing.Point(119, 61);
-            this.txttensv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txttensv.Name = "txttensv";
-            this.txttensv.Size = new System.Drawing.Size(162, 26);
-            this.txttensv.TabIndex = 14;
-            // 
             // txtmasv
             // 
             this.txtmasv.Location = new System.Drawing.Point(-297, 555);
@@ -98,7 +99,7 @@ namespace Project_SV
             // 
             // txttimkiemmasv
             // 
-            this.txttimkiemmasv.Location = new System.Drawing.Point(7, 27);
+            this.txttimkiemmasv.Location = new System.Drawing.Point(8, 27);
             this.txttimkiemmasv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txttimkiemmasv.Name = "txttimkiemmasv";
             this.txttimkiemmasv.Size = new System.Drawing.Size(274, 26);
@@ -115,56 +116,15 @@ namespace Project_SV
             this.Column2,
             this.ten_lop,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.khoa});
             this.grkq.Location = new System.Drawing.Point(12, 14);
             this.grkq.Name = "grkq";
             this.grkq.ReadOnly = true;
             this.grkq.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grkq.Size = new System.Drawing.Size(643, 523);
+            this.grkq.Size = new System.Drawing.Size(823, 523);
             this.grkq.TabIndex = 22;
             this.grkq.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grkq_CellClick);
-            // 
-            // ma_kq
-            // 
-            this.ma_kq.DataPropertyName = "ma_kq";
-            this.ma_kq.HeaderText = "Mã kết quả";
-            this.ma_kq.Name = "ma_kq";
-            this.ma_kq.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ma_sv";
-            this.Column1.HeaderText = "Mã SV";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ten_mh";
-            this.Column2.HeaderText = "Tên môn học";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // ten_lop
-            // 
-            this.ten_lop.DataPropertyName = "ma_lop";
-            this.ten_lop.HeaderText = "Tên lớp";
-            this.ten_lop.Name = "ten_lop";
-            this.ten_lop.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "lan_thi";
-            this.Column3.HeaderText = "Lần thi";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "diem";
-            this.Column4.HeaderText = "Điểm";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // label2
             // 
@@ -213,19 +173,19 @@ namespace Project_SV
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbma_sv);
             this.groupBox1.Controls.Add(this.txt_ma_kq);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbtenlop);
             this.groupBox1.Controls.Add(this.cmbmonhoc);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txttensv);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtdiemthi);
             this.groupBox1.Controls.Add(this.txtlanthi);
-            this.groupBox1.Location = new System.Drawing.Point(667, 223);
+            this.groupBox1.Location = new System.Drawing.Point(855, 223);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 241);
             this.groupBox1.TabIndex = 33;
@@ -267,7 +227,7 @@ namespace Project_SV
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txttimkiemmasv);
-            this.groupBox2.Location = new System.Drawing.Point(667, 470);
+            this.groupBox2.Location = new System.Drawing.Point(854, 470);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(295, 67);
             this.groupBox2.TabIndex = 34;
@@ -281,9 +241,9 @@ namespace Project_SV
             this.groupBox3.Controls.Add(this.btnthoat);
             this.groupBox3.Controls.Add(this.btnkhongghi);
             this.groupBox3.Controls.Add(this.btnghi);
-            this.groupBox3.Location = new System.Drawing.Point(667, 14);
+            this.groupBox3.Location = new System.Drawing.Point(855, 14);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 203);
+            this.groupBox3.Size = new System.Drawing.Size(151, 203);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
@@ -297,6 +257,7 @@ namespace Project_SV
             this.btnthem.Size = new System.Drawing.Size(129, 51);
             this.btnthem.TabIndex = 23;
             this.btnthem.Text = "Thêm";
+            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
@@ -309,6 +270,7 @@ namespace Project_SV
             this.btnxoa.Size = new System.Drawing.Size(129, 51);
             this.btnxoa.TabIndex = 24;
             this.btnxoa.Text = "Xóa";
+            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
@@ -334,6 +296,7 @@ namespace Project_SV
             this.btnkhongghi.Size = new System.Drawing.Size(129, 51);
             this.btnkhongghi.TabIndex = 26;
             this.btnkhongghi.Text = "Không ghi";
+            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnkhongghi.UseVisualStyleBackColor = true;
             this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
             // 
@@ -346,15 +309,165 @@ namespace Project_SV
             this.btnghi.Size = new System.Drawing.Size(129, 51);
             this.btnghi.TabIndex = 25;
             this.btnghi.Text = "Ghi";
+            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnghi.UseVisualStyleBackColor = true;
             this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rd_toantruong);
+            this.groupBox4.Controls.Add(this.rdkhoa_NGONNGU);
+            this.groupBox4.Controls.Add(this.rdkhoa_KINHTE);
+            this.groupBox4.Controls.Add(this.rdkhoaCN_OTO);
+            this.groupBox4.Controls.Add(this.rdkhoaDL);
+            this.groupBox4.Controls.Add(this.rdkhoa_CNTT);
+            this.groupBox4.Location = new System.Drawing.Point(1017, 14);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(132, 203);
+            this.groupBox4.TabIndex = 41;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Lọc sinh viên";
+            // 
+            // rd_toantruong
+            // 
+            this.rd_toantruong.AutoSize = true;
+            this.rd_toantruong.Location = new System.Drawing.Point(6, 25);
+            this.rd_toantruong.Name = "rd_toantruong";
+            this.rd_toantruong.Size = new System.Drawing.Size(113, 24);
+            this.rd_toantruong.TabIndex = 3;
+            this.rd_toantruong.TabStop = true;
+            this.rd_toantruong.Text = "Toàn trường";
+            this.rd_toantruong.UseVisualStyleBackColor = true;
+            this.rd_toantruong.CheckedChanged += new System.EventHandler(this.rd_toantruong_CheckedChanged);
+            // 
+            // rdkhoa_NGONNGU
+            // 
+            this.rdkhoa_NGONNGU.AutoSize = true;
+            this.rdkhoa_NGONNGU.Location = new System.Drawing.Point(6, 175);
+            this.rdkhoa_NGONNGU.Name = "rdkhoa_NGONNGU";
+            this.rdkhoa_NGONNGU.Size = new System.Drawing.Size(96, 24);
+            this.rdkhoa_NGONNGU.TabIndex = 1;
+            this.rdkhoa_NGONNGU.TabStop = true;
+            this.rdkhoa_NGONNGU.Text = "Ngôn ngữ";
+            this.rdkhoa_NGONNGU.UseVisualStyleBackColor = true;
+            this.rdkhoa_NGONNGU.CheckedChanged += new System.EventHandler(this.rdkhoa_NGONNGU_CheckedChanged);
+            // 
+            // rdkhoa_KINHTE
+            // 
+            this.rdkhoa_KINHTE.AutoSize = true;
+            this.rdkhoa_KINHTE.Location = new System.Drawing.Point(6, 145);
+            this.rdkhoa_KINHTE.Name = "rdkhoa_KINHTE";
+            this.rdkhoa_KINHTE.Size = new System.Drawing.Size(76, 24);
+            this.rdkhoa_KINHTE.TabIndex = 0;
+            this.rdkhoa_KINHTE.TabStop = true;
+            this.rdkhoa_KINHTE.Text = "Kinh tế";
+            this.rdkhoa_KINHTE.UseVisualStyleBackColor = true;
+            this.rdkhoa_KINHTE.CheckedChanged += new System.EventHandler(this.rdkhoa_KINHTE_CheckedChanged);
+            // 
+            // rdkhoaCN_OTO
+            // 
+            this.rdkhoaCN_OTO.AutoSize = true;
+            this.rdkhoaCN_OTO.Location = new System.Drawing.Point(6, 115);
+            this.rdkhoaCN_OTO.Name = "rdkhoaCN_OTO";
+            this.rdkhoaCN_OTO.Size = new System.Drawing.Size(86, 24);
+            this.rdkhoaCN_OTO.TabIndex = 0;
+            this.rdkhoaCN_OTO.TabStop = true;
+            this.rdkhoaCN_OTO.Text = "CN ÔTÔ";
+            this.rdkhoaCN_OTO.UseVisualStyleBackColor = true;
+            this.rdkhoaCN_OTO.CheckedChanged += new System.EventHandler(this.rdkhoaCN_OTO_CheckedChanged);
+            // 
+            // rdkhoaDL
+            // 
+            this.rdkhoaDL.AutoSize = true;
+            this.rdkhoaDL.Location = new System.Drawing.Point(6, 85);
+            this.rdkhoaDL.Name = "rdkhoaDL";
+            this.rdkhoaDL.Size = new System.Drawing.Size(94, 24);
+            this.rdkhoaDL.TabIndex = 0;
+            this.rdkhoaDL.TabStop = true;
+            this.rdkhoaDL.Text = "Điện lạnh";
+            this.rdkhoaDL.UseVisualStyleBackColor = true;
+            this.rdkhoaDL.CheckedChanged += new System.EventHandler(this.rdkhoaDL_CheckedChanged);
+            // 
+            // rdkhoa_CNTT
+            // 
+            this.rdkhoa_CNTT.AutoSize = true;
+            this.rdkhoa_CNTT.Location = new System.Drawing.Point(6, 55);
+            this.rdkhoa_CNTT.Name = "rdkhoa_CNTT";
+            this.rdkhoa_CNTT.Size = new System.Drawing.Size(67, 24);
+            this.rdkhoa_CNTT.TabIndex = 0;
+            this.rdkhoa_CNTT.TabStop = true;
+            this.rdkhoa_CNTT.Text = "CNTT";
+            this.rdkhoa_CNTT.UseVisualStyleBackColor = true;
+            this.rdkhoa_CNTT.CheckedChanged += new System.EventHandler(this.rdkhoa_CNTT_CheckedChanged);
+            // 
+            // cmbma_sv
+            // 
+            this.cmbma_sv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbma_sv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbma_sv.FormattingEnabled = true;
+            this.cmbma_sv.Location = new System.Drawing.Point(119, 60);
+            this.cmbma_sv.Name = "cmbma_sv";
+            this.cmbma_sv.Size = new System.Drawing.Size(162, 28);
+            this.cmbma_sv.TabIndex = 39;
+            // 
+            // ma_kq
+            // 
+            this.ma_kq.DataPropertyName = "ma_kq";
+            this.ma_kq.HeaderText = "Mã KQ";
+            this.ma_kq.Name = "ma_kq";
+            this.ma_kq.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ma_sv";
+            this.Column1.HeaderText = "Mã SV";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ten_mh";
+            this.Column2.HeaderText = "Tên môn học";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // ten_lop
+            // 
+            this.ten_lop.DataPropertyName = "ten_lop";
+            this.ten_lop.HeaderText = "Tên lớp";
+            this.ten_lop.Name = "ten_lop";
+            this.ten_lop.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "lan_thi";
+            this.Column3.HeaderText = "Lần thi";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "diem";
+            this.Column4.HeaderText = "Điểm";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // khoa
+            // 
+            this.khoa.DataPropertyName = "ten_khoa";
+            this.khoa.HeaderText = "Khoa";
+            this.khoa.Name = "khoa";
+            this.khoa.ReadOnly = true;
+            this.khoa.Width = 120;
             // 
             // frmketqua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(978, 593);
+            this.ClientSize = new System.Drawing.Size(1156, 569);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -374,6 +487,8 @@ namespace Project_SV
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +497,6 @@ namespace Project_SV
         #endregion
         private System.Windows.Forms.TextBox txtdiemthi;
         private System.Windows.Forms.TextBox txtlanthi;
-        private System.Windows.Forms.TextBox txttensv;
         private System.Windows.Forms.TextBox txtmasv;
         private System.Windows.Forms.TextBox txttimkiemmasv;
         private System.Windows.Forms.DataGridView grkq;
@@ -400,14 +514,23 @@ namespace Project_SV
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbmonhoc;
         private System.Windows.Forms.ComboBox cmbtenlop;
+        private System.Windows.Forms.TextBox txt_ma_kq;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton rdkhoa_NGONNGU;
+        private System.Windows.Forms.RadioButton rdkhoa_KINHTE;
+        private System.Windows.Forms.RadioButton rdkhoaCN_OTO;
+        private System.Windows.Forms.RadioButton rdkhoaDL;
+        private System.Windows.Forms.RadioButton rdkhoa_CNTT;
+        private System.Windows.Forms.RadioButton rd_toantruong;
+        private System.Windows.Forms.ComboBox cmbma_sv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ma_kq;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten_lop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.TextBox txt_ma_kq;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
     }
 }

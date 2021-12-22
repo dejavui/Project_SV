@@ -22,10 +22,14 @@ namespace Project_SV
         {
             try
             {
-            this.khoahocTableAdapter.Fill(this.qLSVDataSet1.khoahoc);
+                string sql = "select * from khoahoc";
+                grkhoahoc.DataSource = kn.taobang(sql);
+                int r = grkhoahoc.CurrentCell.RowIndex;
+                string ma = grkhoahoc.Rows[r].Cells[0].Value.ToString();
+
                 for (int i = 0; i < grkhoahoc.Rows.Count - 1; i++)
                 {
-                    if (grkhoahoc.Rows[i].Cells[0].Value.ToString() == txtmakhoahoc.Text)
+                    if (grkhoahoc.Rows[i].Cells[0].Value.ToString() == ma)
                     {
                         grkhoahoc.CurrentCell = grkhoahoc.Rows[i].Cells[0];
                         grkhoahoc.Rows[i].Selected = true;
@@ -35,7 +39,6 @@ namespace Project_SV
             catch (Exception)
             {
                 MessageBox.Show("Không có dữ liệu");
-                throw;
             }
 
         }
@@ -46,9 +49,7 @@ namespace Project_SV
                 if (grkhoahoc.Rows.Count > 1)
                 {
                     int dong = grkhoahoc.CurrentCell.RowIndex;
-                    txtmakhoahoc.Text = grkhoahoc.Rows[dong].Cells[0].Value.ToString();
-                    txtnambatdau.Text = grkhoahoc.Rows[dong].Cells[1].Value.ToString();
-                    txtnamketthuc.Text = grkhoahoc.Rows[dong].Cells[2].Value.ToString();
+                    txttenkhoahoc.Text = grkhoahoc.Rows[dong].Cells[1].Value.ToString();
                     return;
                 }
                 MessageBox.Show("Không tìm thấy dữ liệu");
@@ -84,9 +85,7 @@ namespace Project_SV
         }
         private void resettext()
         {
-            txtmakhoahoc.ResetText();
-            txtnambatdau.ResetText();
-            txtnamketthuc.ResetText();
+            
         }
         private void frmkhoahoc_Load(object sender, EventArgs e)
         {
@@ -97,7 +96,6 @@ namespace Project_SV
             catch (Exception)
             {
                 MessageBox.Show("Lỗi kết nối");
-                //throw;
             }
             loadgr();
             loaddata();
@@ -105,7 +103,7 @@ namespace Project_SV
         }
         private void timkiem()
         {
-            string sqltimkiem = "select * from khoahoc where ma_khoa_hoc like '%" + txttimkiem.Text.Trim() + "%' or nam_bat_dau like '%" + txttimkiem.Text.Trim() + "%' or nam_ket_thuc like'%" + txttimkiem.Text.Trim() + "%'";
+            string sqltimkiem = "select * from khoahoc where ma_khoa_hoc like '%" + txttimkiem.Text.Trim() + "%' or ten_khoa_hoc like '%"+txttimkiem.Text.Trim()+"%' ";
             kn.sqlquery(sqltimkiem);
             grkhoahoc.DataSource = kn.taobang(sqltimkiem);
         }
@@ -130,41 +128,32 @@ namespace Project_SV
         {
             if (flag == true) // nút thêm
             {
-
-                string sql1 = "select * from khoa where khoa_hoc = '" + txtmakhoahoc.Text.Trim() + "'";
-                SqlCommand cmd = new SqlCommand(sql1, kn.conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                try
                 {
-                    MessageBox.Show("Mã Khóa học đã có trong CSDL");
-                    dr.Close();
-                    return;
-                }
-                dr.Close();
-                string sql2 = ("insert into khoahoc(ma_khoa_hoc,nam_bat_dau,nam_ket_thuc)values('"+txtmakhoahoc.Text.Trim()+"', '"+txtnambatdau.Text.Trim()+"', '"+txtnamketthuc.Text.Trim()+"')");
+                string sql2 = "insert into khoahoc(ten_khoa_hoc)values('"+txttenkhoahoc.Text.Trim()+"')";
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi thêm dữ liệu");
+                }
 
             }
 
             else //ghi nút sửa
             {
-                if (txtmakhoahoc.Text.Trim() == "" || txtnambatdau.Text.Trim() == ""|| txtnamketthuc.Text.Trim() =="")
+                if (txttenkhoahoc.Text.Trim() == "")
                 {
                     MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
-                    txtmakhoahoc.Focus();
+                    txttenkhoahoc.Focus();
                     return;
                 }
-
-                string sql3 = "select * from khoa_hoc where ma_khoa_hoc ='" + txtmakhoahoc.Text.Trim() + "'";
+                int r = grkhoahoc.CurrentCell.RowIndex;
+                string ma = grkhoahoc.Rows[r].Cells[0].Value.ToString();
+                string sql3 = "update khoahoc set ten_khoa_hoc = '"+txttenkhoahoc.Text.Trim()+"' where ma_khoa_hoc ='"+ma+"'";
                 kn.sqlquery(sql3);
-                string sql4 = "update khoa_hoc set ma_khoa_hoc='" + txtmakhoahoc.Text.Trim() + "' where ma_khoa_hoc='" + txtmakhoahoc.Text.Trim() + "'";
-                kn.sqlquery(sql4);
-                string sql5 = "update khoa_hoc set nam_bat_dau='" + txtnambatdau.Text.Trim() + "' where ma_khoa_hoc='" + txtmakhoahoc.Text.Trim() + "'";
-                kn.sqlquery(sql5);
-                string sql6 = "update khoa_hoc set nam_ket_thuc ='" + txtnamketthuc.Text.Trim() + "' where ma_khoa_hoc ='"+txtmakhoahoc.Text.Trim()+ "'";
-                kn.sqlquery(sql6);
                 loadgr();
                 loaddata();
             }
@@ -175,7 +164,7 @@ namespace Project_SV
             lockcontrol();
             loadgr();
             loaddata();
-            txtmakhoahoc.Focus();
+            txttenkhoahoc.Focus();
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -219,6 +208,11 @@ namespace Project_SV
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

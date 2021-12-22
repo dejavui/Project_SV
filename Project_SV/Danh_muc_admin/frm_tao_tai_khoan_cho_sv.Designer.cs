@@ -79,7 +79,7 @@ namespace Project_SV
             this.btn_tao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tao.Location = new System.Drawing.Point(397, 13);
             this.btn_tao.Name = "btn_tao";
-            this.btn_tao.Size = new System.Drawing.Size(87, 38);
+            this.btn_tao.Size = new System.Drawing.Size(87, 43);
             this.btn_tao.TabIndex = 6;
             this.btn_tao.Text = "Tạo";
             this.btn_tao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -90,9 +90,9 @@ namespace Project_SV
             // 
             this.btnxoa.Image = global::Project_SV.Properties.Resources.Trash_Full;
             this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(397, 57);
+            this.btnxoa.Location = new System.Drawing.Point(397, 62);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(87, 38);
+            this.btnxoa.Size = new System.Drawing.Size(87, 43);
             this.btnxoa.TabIndex = 7;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

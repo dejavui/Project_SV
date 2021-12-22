@@ -21,7 +21,7 @@ namespace Project_SV
         ketnoidulieu kn = new ketnoidulieu();
         private void loadgr()
         {
-            string sql = "select tenDN,matkhau,hoten from logins where quyen = 'member'";
+            string sql = "select tenDN,matkhau,hoten from logins where quyen = 'sinhvien'";
             grtaikhoan.DataSource = kn.taobang(sql);
             
         }

@@ -187,7 +187,7 @@ namespace Project_SV
             this.btnbaocao.Location = new System.Drawing.Point(791, 144);
             this.btnbaocao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnbaocao.Name = "btnbaocao";
-            this.btnbaocao.Size = new System.Drawing.Size(270, 47);
+            this.btnbaocao.Size = new System.Drawing.Size(208, 47);
             this.btnbaocao.TabIndex = 11;
             this.btnbaocao.Text = "In Kết Quả Học Tập";
             this.btnbaocao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -199,6 +199,7 @@ namespace Project_SV
             this.AcceptButton = this.btnxemdiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.btnthoat;
             this.ClientSize = new System.Drawing.Size(1129, 232);
             this.Controls.Add(this.btnbaocao);

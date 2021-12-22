@@ -20,7 +20,7 @@ namespace Project_SV
         ketnoidulieu kn = new ketnoidulieu();
         private void loadgr()
         {
-            string sql = "select logins.tenDN,hoten from logins where quyen = 'member'";
+            string sql = "select logins.tenDN,hoten from logins where quyen = 'sinhvien'";
             grlogins.DataSource = kn.taobang(sql);
 
             for (int i = 0; i < grlogins.Rows.Count - 1; i++)
@@ -57,7 +57,7 @@ namespace Project_SV
         {
             try
             {
-            string sql = "insert into logins (tenDN,matkhau,hoten,quyen)values('"+txtmasv.Text.Trim()+"', '123', '"+txthoten.Text.Trim()+"', 'member')";
+            string sql = "insert into logins (tenDN,matkhau,hoten,quyen)values('"+txtmasv.Text.Trim().ToUpper()+"', '123', '"+txthoten.Text.Trim()+"', 'sinhvien')";
             kn.sqlquery(sql);
             loadgr();
             }
