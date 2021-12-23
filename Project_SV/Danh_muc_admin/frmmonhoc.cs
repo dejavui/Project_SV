@@ -155,7 +155,7 @@ namespace Project_SV
 
                 try
                 {
-                string sql2 = ("insert into monhoc(ten_mh,ma_khoa,ma_ct,chu_thich)values('"+txttenmonhoc.Text.Trim()+"','"+cmbtenkhoa.SelectedValue.ToString()+"','"+cmbtenchuongtrinh.SelectedValue.ToString()+"','"+txtchuthich.Text.Trim()+"')");
+                string sql2 = ("insert into monhoc(ten_mh,ma_khoa,ma_ct,chu_thich)values(N'"+txttenmonhoc.Text.Trim()+"',N'"+cmbtenkhoa.SelectedValue.ToString()+"',N'"+cmbtenchuongtrinh.SelectedValue.ToString()+"',N'"+txtchuthich.Text.Trim()+"')");
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
@@ -173,14 +173,14 @@ namespace Project_SV
                 {
                     int r = grmonhoc.CurrentCell.RowIndex;
                     string ma = grmonhoc.Rows[r].Cells[0].Value.ToString();
-                    string sql3 = "update monhoc set ten_mh = '"+txttenmonhoc.Text.Trim()+"', ma_khoa = '"+cmbtenkhoa.SelectedValue.ToString()+"',ma_ct='"+cmbtenchuongtrinh.SelectedValue.ToString()+"',chu_thich='"+txtchuthich.Text.Trim()+"' where ma_mh = '"+ma+"'";
+                    string sql3 = "update monhoc set ten_mh = N'"+txttenmonhoc.Text.Trim()+"', ma_khoa = N'"+cmbtenkhoa.SelectedValue.ToString()+"',ma_ct=N'"+cmbtenchuongtrinh.SelectedValue.ToString()+"',chu_thich=N'"+txtchuthich.Text.Trim()+"' where ma_mh = '"+ma+"'";
                     kn.sqlquery(sql3);
                     loadgr();
                     loaddata();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Lỗi sửa dữ liệu");
+                    MessageBox.Show("Lỗi khi sửa");
                 }
             }
         }

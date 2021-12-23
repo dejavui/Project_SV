@@ -174,7 +174,8 @@ namespace Project_SV
         {
             if (flag == true) // nút thêm
             {
-
+            try
+            {
                 string sql1 = "select * from sinhvien where ma_sv=N'" + txtmasv.Text.Trim() + "'";
                 SqlCommand cmd = new SqlCommand(sql1, kn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -185,13 +186,21 @@ namespace Project_SV
                     return;
                 }
                 dr.Close();
-                string sql2 = ("insert into sinhvien(ma_sv,ho_ten,ngay_thang_nam_sinh,dia_chi,gioi_tinh,ma_lop)values(N'" + txtmasv.Text.Trim()+"', N'"+txthoten.Text.Trim()+"','"+dtp_ngay_thang_nam_sinh.Value.ToString("yyyy-MM-dd")+"', N'"+txt_dia_chi.Text.Trim()+"','"+cmb_gioi_tinh.SelectedItem.ToString()+"', '"+cmbmalop.SelectedValue.ToString()+"')");
+                string sql2 = ("insert into sinhvien(ma_sv,ho_ten,ngay_thang_nam_sinh,dia_chi,gioi_tinh,ma_lop)values(N'" + txtmasv.Text.Trim()+"', N'"+txthoten.Text.Trim()+"','"+dtp_ngay_thang_nam_sinh.Value.ToString("yyyy-MM-dd")+"', N'"+txt_dia_chi.Text.Trim()+"',N'"+cmb_gioi_tinh.SelectedItem.ToString()+"', '"+cmbmalop.SelectedValue.ToString()+"')");
                 kn.sqlquery(sql2);
                 loadgr();
                 loaddata();
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi khi thêm dữ liệu");
+            }
+
+            }
             else //ghi nút sửa
             {
+                try
+                {
                 if (txtmasv.Text.Trim() == "" || cmbmalop.Text.Trim() == "")
                 {
                     MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
@@ -203,6 +212,11 @@ namespace Project_SV
                 kn.sqlquery(sql3);
                 loadgr();
                 loaddata();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi sửa","Thông báo");
+                }
             }
         }
 

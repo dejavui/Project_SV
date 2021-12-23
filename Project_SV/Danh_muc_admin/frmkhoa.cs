@@ -134,6 +134,8 @@ namespace Project_SV
 
             else //ghi nút sửa
             {
+                try
+                {
                 if (txttenkhoa.Text.Trim() == "")
                 {
                     MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
@@ -146,6 +148,12 @@ namespace Project_SV
                 kn.sqlquery(sql5);
                 loadgr();
                 loaddata();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi sửa","Thông báo");
+                }
             }
         }
 
@@ -198,6 +206,11 @@ namespace Project_SV
         private void frmkhoa_FormClosed(object sender, FormClosedEventArgs e)
         {
             kn.myclose();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

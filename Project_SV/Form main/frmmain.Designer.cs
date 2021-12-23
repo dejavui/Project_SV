@@ -32,7 +32,6 @@ namespace Project_SV
             this.btnkhoa = new System.Windows.Forms.Button();
             this.btnkhoahoc = new System.Windows.Forms.Button();
             this.btnchuongtrinh = new System.Windows.Forms.Button();
-            this.btnsinhvien = new System.Windows.Forms.Button();
             this.btnlop = new System.Windows.Forms.Button();
             this.btnkq = new System.Windows.Forms.Button();
             this.btnmonhoc = new System.Windows.Forms.Button();
@@ -74,6 +73,7 @@ namespace Project_SV
             this.btn_doi_mk = new System.Windows.Forms.Button();
             this.lbnhan = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnsinhvien = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,9 +84,10 @@ namespace Project_SV
             this.btnkhoa.Location = new System.Drawing.Point(19, 27);
             this.btnkhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnkhoa.Name = "btnkhoa";
-            this.btnkhoa.Size = new System.Drawing.Size(112, 46);
+            this.btnkhoa.Size = new System.Drawing.Size(156, 46);
             this.btnkhoa.TabIndex = 1;
             this.btnkhoa.Text = "Khoa";
+            this.btnkhoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnkhoa.UseVisualStyleBackColor = true;
             this.btnkhoa.Click += new System.EventHandler(this.btnkhoa_Click);
             // 
@@ -95,9 +96,10 @@ namespace Project_SV
             this.btnkhoahoc.Location = new System.Drawing.Point(19, 83);
             this.btnkhoahoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnkhoahoc.Name = "btnkhoahoc";
-            this.btnkhoahoc.Size = new System.Drawing.Size(112, 46);
+            this.btnkhoahoc.Size = new System.Drawing.Size(156, 46);
             this.btnkhoahoc.TabIndex = 2;
             this.btnkhoahoc.Text = "Khóa học";
+            this.btnkhoahoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnkhoahoc.UseVisualStyleBackColor = true;
             this.btnkhoahoc.Click += new System.EventHandler(this.btnkhoahoc_Click);
             // 
@@ -105,29 +107,21 @@ namespace Project_SV
             // 
             this.btnchuongtrinh.Location = new System.Drawing.Point(19, 137);
             this.btnchuongtrinh.Name = "btnchuongtrinh";
-            this.btnchuongtrinh.Size = new System.Drawing.Size(112, 46);
+            this.btnchuongtrinh.Size = new System.Drawing.Size(156, 46);
             this.btnchuongtrinh.TabIndex = 3;
             this.btnchuongtrinh.Text = "Chương trình";
+            this.btnchuongtrinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnchuongtrinh.UseVisualStyleBackColor = true;
             this.btnchuongtrinh.Click += new System.EventHandler(this.btnchuongtrinh_Click);
-            // 
-            // btnsinhvien
-            // 
-            this.btnsinhvien.Location = new System.Drawing.Point(19, 293);
-            this.btnsinhvien.Name = "btnsinhvien";
-            this.btnsinhvien.Size = new System.Drawing.Size(112, 46);
-            this.btnsinhvien.TabIndex = 5;
-            this.btnsinhvien.Text = "Sinh Viên";
-            this.btnsinhvien.UseVisualStyleBackColor = true;
-            this.btnsinhvien.Click += new System.EventHandler(this.btnsinhvien_Click);
             // 
             // btnlop
             // 
             this.btnlop.Location = new System.Drawing.Point(19, 241);
             this.btnlop.Name = "btnlop";
-            this.btnlop.Size = new System.Drawing.Size(112, 46);
+            this.btnlop.Size = new System.Drawing.Size(156, 46);
             this.btnlop.TabIndex = 6;
             this.btnlop.Text = "Lớp";
+            this.btnlop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnlop.UseVisualStyleBackColor = true;
             this.btnlop.Click += new System.EventHandler(this.btnlop_Click);
             // 
@@ -135,9 +129,10 @@ namespace Project_SV
             // 
             this.btnkq.Location = new System.Drawing.Point(19, 345);
             this.btnkq.Name = "btnkq";
-            this.btnkq.Size = new System.Drawing.Size(112, 46);
+            this.btnkq.Size = new System.Drawing.Size(156, 46);
             this.btnkq.TabIndex = 7;
             this.btnkq.Text = "Kết quả";
+            this.btnkq.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnkq.UseVisualStyleBackColor = true;
             this.btnkq.Click += new System.EventHandler(this.btnkq_Click);
             // 
@@ -145,9 +140,10 @@ namespace Project_SV
             // 
             this.btnmonhoc.Location = new System.Drawing.Point(19, 189);
             this.btnmonhoc.Name = "btnmonhoc";
-            this.btnmonhoc.Size = new System.Drawing.Size(112, 46);
+            this.btnmonhoc.Size = new System.Drawing.Size(156, 46);
             this.btnmonhoc.TabIndex = 8;
             this.btnmonhoc.Text = "Môn học";
+            this.btnmonhoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnmonhoc.UseVisualStyleBackColor = true;
             this.btnmonhoc.Click += new System.EventHandler(this.btnmonhoc_Click);
             // 
@@ -315,20 +311,20 @@ namespace Project_SV
             // mnuSV
             // 
             this.mnuSV.Name = "mnuSV";
-            this.mnuSV.Size = new System.Drawing.Size(180, 22);
+            this.mnuSV.Size = new System.Drawing.Size(153, 22);
             this.mnuSV.Text = "Sinh viên";
             this.mnuSV.Click += new System.EventHandler(this.mnuSV_Click);
             // 
             // mnuGV
             // 
             this.mnuGV.Name = "mnuGV";
-            this.mnuGV.Size = new System.Drawing.Size(180, 22);
+            this.mnuGV.Size = new System.Drawing.Size(153, 22);
             this.mnuGV.Text = "Giảng viên";
             // 
             // mnuDiem
             // 
             this.mnuDiem.Name = "mnuDiem";
-            this.mnuDiem.Size = new System.Drawing.Size(180, 22);
+            this.mnuDiem.Size = new System.Drawing.Size(153, 22);
             this.mnuDiem.Text = "Điểm môn học";
             // 
             // mnuItemtimkiem
@@ -473,6 +469,19 @@ namespace Project_SV
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Tài khoản:";
+            // 
+            // btnsinhvien
+            // 
+            this.btnsinhvien.Image = global::Project_SV.Properties.Resources.sv1;
+            this.btnsinhvien.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsinhvien.Location = new System.Drawing.Point(19, 293);
+            this.btnsinhvien.Name = "btnsinhvien";
+            this.btnsinhvien.Size = new System.Drawing.Size(156, 46);
+            this.btnsinhvien.TabIndex = 5;
+            this.btnsinhvien.Text = "Sinh Viên";
+            this.btnsinhvien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsinhvien.UseVisualStyleBackColor = true;
+            this.btnsinhvien.Click += new System.EventHandler(this.btnsinhvien_Click);
             // 
             // frmmain
             // 

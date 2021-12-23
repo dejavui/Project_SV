@@ -144,6 +144,8 @@ namespace Project_SV
 
             else //ghi nút sửa
             {
+                try
+                {
                 if (txttenkhoahoc.Text.Trim() == "")
                 {
                     MessageBox.Show("Bạn không được để trống thông tin", "Thông báo");
@@ -156,6 +158,11 @@ namespace Project_SV
                 kn.sqlquery(sql3);
                 loadgr();
                 loaddata();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi khi sửa","Thông báo");
+                }
             }
         }
 
@@ -174,7 +181,7 @@ namespace Project_SV
             {
                 int r = grkhoahoc.CurrentCell.RowIndex;
                 string makhoa = grkhoahoc.Rows[r].Cells[0].Value.ToString();
-                string sqlxoa = "delete khoa_hoc where ma_khoa_hoc='" + makhoa + "'";
+                string sqlxoa = "delete khoahoc where ma_khoa_hoc='" + makhoa + "'";
                 kn.sqlquery(sqlxoa);
                 loadgr();
                 loaddata();

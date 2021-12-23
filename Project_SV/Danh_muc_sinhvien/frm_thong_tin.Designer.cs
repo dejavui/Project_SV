@@ -29,83 +29,98 @@ namespace Project_SV
         /// </summary>
         private void InitializeComponent()
         {
-            this.grttsinhvien = new System.Windows.Forms.DataGridView();
-            this.ma_sv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ho_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngay_thang_nam_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dia_chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ma_lop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grttsinhvien)).BeginInit();
+            this.grsinhvien = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grsinhvien)).BeginInit();
             this.SuspendLayout();
             // 
-            // grttsinhvien
+            // grsinhvien
             // 
-            this.grttsinhvien.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.grttsinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grttsinhvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ma_sv,
-            this.ho_ten,
-            this.gioi_tinh,
-            this.ngay_thang_nam_sinh,
-            this.dia_chi,
-            this.ma_lop});
-            this.grttsinhvien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grttsinhvien.Location = new System.Drawing.Point(0, 0);
-            this.grttsinhvien.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
-            this.grttsinhvien.Name = "grttsinhvien";
-            this.grttsinhvien.RowTemplate.ReadOnly = true;
-            this.grttsinhvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grttsinhvien.Size = new System.Drawing.Size(1091, 605);
-            this.grttsinhvien.TabIndex = 1;
+            this.grsinhvien.AllowUserToAddRows = false;
+            this.grsinhvien.AllowUserToDeleteRows = false;
+            this.grsinhvien.AllowUserToResizeColumns = false;
+            this.grsinhvien.AllowUserToResizeRows = false;
+            this.grsinhvien.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.grsinhvien.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.grsinhvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grsinhvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.grsinhvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grsinhvien.Location = new System.Drawing.Point(0, 0);
+            this.grsinhvien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grsinhvien.Name = "grsinhvien";
+            this.grsinhvien.RowTemplate.Height = 30;
+            this.grsinhvien.RowTemplate.ReadOnly = true;
+            this.grsinhvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grsinhvien.Size = new System.Drawing.Size(1091, 605);
+            this.grsinhvien.TabIndex = 1;
             // 
-            // ma_sv
+            // Column1
             // 
-            this.ma_sv.DataPropertyName = "ma_sv";
-            this.ma_sv.HeaderText = "Mã SV";
-            this.ma_sv.Name = "ma_sv";
+            this.Column1.DataPropertyName = "ma_sv";
+            this.Column1.HeaderText = "Mã sv";
+            this.Column1.Name = "Column1";
             // 
-            // ho_ten
+            // Column2
             // 
-            this.ho_ten.DataPropertyName = "ho_ten";
-            this.ho_ten.HeaderText = "Họ và tên";
-            this.ho_ten.Name = "ho_ten";
-            this.ho_ten.Width = 200;
+            this.Column2.DataPropertyName = "ho_ten";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 180;
             // 
-            // gioi_tinh
+            // Column3
             // 
-            this.gioi_tinh.DataPropertyName = "gioi_tinh";
-            this.gioi_tinh.HeaderText = "Giới tính";
-            this.gioi_tinh.Name = "gioi_tinh";
-            this.gioi_tinh.Width = 150;
+            this.Column3.DataPropertyName = "gioi_tinh";
+            this.Column3.HeaderText = "Giới tính";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
             // 
-            // ngay_thang_nam_sinh
+            // Column4
             // 
-            this.ngay_thang_nam_sinh.DataPropertyName = "ngay_thang_nam_sinh";
-            this.ngay_thang_nam_sinh.HeaderText = "Ngày tháng năm sinh";
-            this.ngay_thang_nam_sinh.Name = "ngay_thang_nam_sinh";
-            this.ngay_thang_nam_sinh.Width = 250;
+            this.Column4.DataPropertyName = "ngay_thang_nam_sinh";
+            this.Column4.HeaderText = "Ngày, tháng, năm, sinh";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 250;
             // 
-            // dia_chi
+            // Column5
             // 
-            this.dia_chi.DataPropertyName = "dia_chi";
-            this.dia_chi.HeaderText = "Địa chỉ";
-            this.dia_chi.Name = "dia_chi";
-            this.dia_chi.Width = 200;
+            this.Column5.DataPropertyName = "dia_chi";
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 150;
             // 
-            // ma_lop
+            // Column6
             // 
-            this.ma_lop.DataPropertyName = "ma_lop";
-            this.ma_lop.HeaderText = "Tên lớp";
-            this.ma_lop.Name = "ma_lop";
-            this.ma_lop.Width = 145;
+            this.Column6.DataPropertyName = "ten_lop";
+            this.Column6.HeaderText = "Lớp";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 120;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "ten_khoa";
+            this.Column7.HeaderText = "Khoa";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 120;
             // 
             // frm_thong_tin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 605);
-            this.Controls.Add(this.grttsinhvien);
+            this.Controls.Add(this.grsinhvien);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -114,19 +129,20 @@ namespace Project_SV
             this.Text = "Thông tin sinh viên";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_thong_tin_FormClosed);
             this.Load += new System.EventHandler(this.frm_thong_tin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grttsinhvien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grsinhvien)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView grttsinhvien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ma_sv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ho_ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngay_thang_nam_sinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dia_chi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ma_lop;
+        private System.Windows.Forms.DataGridView grsinhvien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

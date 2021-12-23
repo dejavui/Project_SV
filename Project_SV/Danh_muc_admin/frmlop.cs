@@ -194,7 +194,7 @@ namespace Project_SV
                 {
                 int r = grlop.CurrentCell.RowIndex;
                 string ma = grlop.Rows[r].Cells[0].Value.ToString();
-                string sql3 = "update lop set ten_lop = '"+txttenlop.Text.Trim()+"' ma_khoa_hoc='"+cmbmakhoahoc.SelectedValue.ToString()+"', ma_khoa='"+cmbtenkhoa.SelectedValue.ToString()+"', ma_ct='"+cmbtenchuongtrinh.SelectedValue.ToString()+"', where ma_lop= '"+txttenlop.Text.Trim()+"'";
+                string sql3 = "update lop set ten_lop = N'"+txttenlop.Text.Trim()+"', ma_khoa_hoc = '"+cmbmakhoahoc.SelectedValue.ToString()+"', ma_khoa=N'"+cmbtenkhoa.SelectedValue.ToString()+"', ma_ct = '"+cmbtenchuongtrinh.SelectedValue.ToString()+"' where ma_lop= N'"+ma+"'";
                 kn.sqlquery(sql3);
                 loadgr();
                 loaddata();

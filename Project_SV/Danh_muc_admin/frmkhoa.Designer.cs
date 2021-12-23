@@ -32,18 +32,18 @@ namespace Project_SV
             this.grkhoa = new System.Windows.Forms.DataGridView();
             this.ma_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnthem = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
-            this.btnfrmmain = new System.Windows.Forms.Button();
             this.txttenkhoa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnghi = new System.Windows.Forms.Button();
-            this.btnkhongghi = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnthem = new System.Windows.Forms.Button();
+            this.btnfrmmain = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
+            this.btnkhongghi = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnghi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grkhoa)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,62 +84,6 @@ namespace Project_SV
             this.ten_khoa.ReadOnly = true;
             this.ten_khoa.Width = 200;
             // 
-            // btnthem
-            // 
-            this.btnthem.Image = global::Project_SV.Properties.Resources.thêm1;
-            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnthem.Location = new System.Drawing.Point(6, 25);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(134, 50);
-            this.btnthem.TabIndex = 1;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnsua
-            // 
-            this.btnsua.Image = global::Project_SV.Properties.Resources.sửa1;
-            this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(7, 83);
-            this.btnsua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(134, 50);
-            this.btnsua.TabIndex = 2;
-            this.btnsua.Text = "Sửa";
-            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnsua.UseVisualStyleBackColor = true;
-            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
-            // 
-            // btnxoa
-            // 
-            this.btnxoa.Image = global::Project_SV.Properties.Resources.Trash_Full;
-            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(7, 141);
-            this.btnxoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(134, 50);
-            this.btnxoa.TabIndex = 3;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnxoa.UseVisualStyleBackColor = true;
-            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
-            // 
-            // btnfrmmain
-            // 
-            this.btnfrmmain.Image = global::Project_SV.Properties.Resources.out2;
-            this.btnfrmmain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnfrmmain.Location = new System.Drawing.Point(7, 201);
-            this.btnfrmmain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnfrmmain.Name = "btnfrmmain";
-            this.btnfrmmain.Size = new System.Drawing.Size(134, 50);
-            this.btnfrmmain.TabIndex = 4;
-            this.btnfrmmain.Text = "Form main";
-            this.btnfrmmain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnfrmmain.UseVisualStyleBackColor = true;
-            this.btnfrmmain.Click += new System.EventHandler(this.btnchuyenform_Click);
-            // 
             // txttenkhoa
             // 
             this.txttenkhoa.Location = new System.Drawing.Point(87, 27);
@@ -156,33 +100,6 @@ namespace Project_SV
             this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Tên Khoa";
-            // 
-            // btnghi
-            // 
-            this.btnghi.BackColor = System.Drawing.SystemColors.Control;
-            this.btnghi.Image = global::Project_SV.Properties.Resources.thêm2;
-            this.btnghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnghi.Location = new System.Drawing.Point(6, 25);
-            this.btnghi.Name = "btnghi";
-            this.btnghi.Size = new System.Drawing.Size(134, 50);
-            this.btnghi.TabIndex = 8;
-            this.btnghi.Text = "Ghi";
-            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnghi.UseVisualStyleBackColor = true;
-            this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
-            // 
-            // btnkhongghi
-            // 
-            this.btnkhongghi.Image = global::Project_SV.Properties.Resources.koghi;
-            this.btnkhongghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnkhongghi.Location = new System.Drawing.Point(6, 83);
-            this.btnkhongghi.Name = "btnkhongghi";
-            this.btnkhongghi.Size = new System.Drawing.Size(134, 50);
-            this.btnkhongghi.TabIndex = 8;
-            this.btnkhongghi.Text = "Không ghi";
-            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnkhongghi.UseVisualStyleBackColor = true;
-            this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
             // 
             // txttimkiem
             // 
@@ -217,6 +134,7 @@ namespace Project_SV
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập liệu";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // groupBox3
             // 
@@ -227,6 +145,89 @@ namespace Project_SV
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
+            // 
+            // btnthem
+            // 
+            this.btnthem.Image = global::Project_SV.Properties.Resources.thêm1;
+            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthem.Location = new System.Drawing.Point(6, 25);
+            this.btnthem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(134, 50);
+            this.btnthem.TabIndex = 1;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnfrmmain
+            // 
+            this.btnfrmmain.Image = global::Project_SV.Properties.Resources.out2;
+            this.btnfrmmain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfrmmain.Location = new System.Drawing.Point(7, 201);
+            this.btnfrmmain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnfrmmain.Name = "btnfrmmain";
+            this.btnfrmmain.Size = new System.Drawing.Size(134, 50);
+            this.btnfrmmain.TabIndex = 4;
+            this.btnfrmmain.Text = "Form main";
+            this.btnfrmmain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnfrmmain.UseVisualStyleBackColor = true;
+            this.btnfrmmain.Click += new System.EventHandler(this.btnchuyenform_Click);
+            // 
+            // btnsua
+            // 
+            this.btnsua.Image = global::Project_SV.Properties.Resources.sửa1;
+            this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsua.Location = new System.Drawing.Point(7, 83);
+            this.btnsua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(134, 50);
+            this.btnsua.TabIndex = 2;
+            this.btnsua.Text = "Sửa";
+            this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+            // 
+            // btnkhongghi
+            // 
+            this.btnkhongghi.Image = global::Project_SV.Properties.Resources.koghi;
+            this.btnkhongghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnkhongghi.Location = new System.Drawing.Point(6, 83);
+            this.btnkhongghi.Name = "btnkhongghi";
+            this.btnkhongghi.Size = new System.Drawing.Size(134, 50);
+            this.btnkhongghi.TabIndex = 8;
+            this.btnkhongghi.Text = "Không ghi";
+            this.btnkhongghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnkhongghi.UseVisualStyleBackColor = true;
+            this.btnkhongghi.Click += new System.EventHandler(this.btnkhongghi_Click);
+            // 
+            // btnxoa
+            // 
+            this.btnxoa.Image = global::Project_SV.Properties.Resources.Trash_Full;
+            this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnxoa.Location = new System.Drawing.Point(7, 141);
+            this.btnxoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.Size = new System.Drawing.Size(134, 50);
+            this.btnxoa.TabIndex = 3;
+            this.btnxoa.Text = "Xóa";
+            this.btnxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
+            // 
+            // btnghi
+            // 
+            this.btnghi.BackColor = System.Drawing.SystemColors.Control;
+            this.btnghi.Image = global::Project_SV.Properties.Resources.thêm2;
+            this.btnghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnghi.Location = new System.Drawing.Point(6, 25);
+            this.btnghi.Name = "btnghi";
+            this.btnghi.Size = new System.Drawing.Size(134, 50);
+            this.btnghi.TabIndex = 8;
+            this.btnghi.Text = "Ghi";
+            this.btnghi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnghi.UseVisualStyleBackColor = true;
+            this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
             // 
             // frmkhoa
             // 

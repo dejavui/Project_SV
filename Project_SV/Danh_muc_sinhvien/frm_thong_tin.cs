@@ -31,9 +31,9 @@ namespace Project_SV
         }
         private void loadgr()
         {
-            string sql1 = "select * from sinhvien where ma_sv = '"+message+"'";
+            string sql1 = "select sinhvien.ma_sv,ho_ten,gioi_tinh,ngay_thang_nam_sinh,dia_chi,lop.ten_lop,khoa.ten_khoa from sinhvien inner join lop on sinhvien.ma_lop = lop.ma_lop  inner join khoa on lop.ma_khoa = khoa.ma_khoa where ma_sv = '" + message+"'";
             kn.taobang(sql1);
-            grttsinhvien.DataSource = kn.taobang(sql1);
+            grsinhvien.DataSource = kn.taobang(sql1);
 
         }
         private void frm_thong_tin_Load(object sender, EventArgs e)
