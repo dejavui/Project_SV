@@ -52,12 +52,12 @@ namespace Project_SV
             this.cmbtenkhoa = new System.Windows.Forms.ComboBox();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.gbtt = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grlop)).BeginInit();
             this.gbtt.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grlop
@@ -306,21 +306,6 @@ namespace Project_SV
             this.gbtt.Text = "Phần nhập Thông tin";
             this.gbtt.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnghi);
-            this.groupBox1.Controls.Add(this.btnthem);
-            this.groupBox1.Controls.Add(this.btnfrmmain);
-            this.groupBox1.Controls.Add(this.btnsua);
-            this.groupBox1.Controls.Add(this.btnkhongghi);
-            this.groupBox1.Controls.Add(this.btnxoa);
-            this.groupBox1.Location = new System.Drawing.Point(850, 20);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(144, 379);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chức năng";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txttimkiem);
@@ -330,6 +315,21 @@ namespace Project_SV
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnthem);
+            this.groupBox1.Controls.Add(this.btnfrmmain);
+            this.groupBox1.Controls.Add(this.btnsua);
+            this.groupBox1.Controls.Add(this.btnkhongghi);
+            this.groupBox1.Controls.Add(this.btnxoa);
+            this.groupBox1.Controls.Add(this.btnghi);
+            this.groupBox1.Location = new System.Drawing.Point(850, 20);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(144, 379);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chức năng";
             // 
             // frmlop
             // 
@@ -351,9 +351,9 @@ namespace Project_SV
             ((System.ComponentModel.ISupportInitialize)(this.grlop)).EndInit();
             this.gbtt.ResumeLayout(false);
             this.gbtt.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

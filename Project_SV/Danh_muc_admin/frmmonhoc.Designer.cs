@@ -30,6 +30,11 @@ namespace Project_SV
         private void InitializeComponent()
         {
             this.grmonhoc = new System.Windows.Forms.DataGridView();
+            this.ma_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.btnghi = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -48,11 +53,6 @@ namespace Project_SV
             this.txtchuthich = new System.Windows.Forms.TextBox();
             this.cmbtenchuongtrinh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ma_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_mh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten_khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grmonhoc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,6 +78,45 @@ namespace Project_SV
             this.grmonhoc.Size = new System.Drawing.Size(725, 532);
             this.grmonhoc.TabIndex = 0;
             this.grmonhoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grmonhoc_CellClick);
+            // 
+            // ma_mh
+            // 
+            this.ma_mh.DataPropertyName = "ma_mh";
+            this.ma_mh.HeaderText = "Mã môn học";
+            this.ma_mh.Name = "ma_mh";
+            this.ma_mh.ReadOnly = true;
+            this.ma_mh.Width = 130;
+            // 
+            // ten_mh
+            // 
+            this.ten_mh.DataPropertyName = "ten_mh";
+            this.ten_mh.HeaderText = "Tên môn học";
+            this.ten_mh.Name = "ten_mh";
+            this.ten_mh.ReadOnly = true;
+            this.ten_mh.Width = 150;
+            // 
+            // ten_khoa
+            // 
+            this.ten_khoa.DataPropertyName = "ten_khoa";
+            this.ten_khoa.HeaderText = "Tên khoa";
+            this.ten_khoa.Name = "ten_khoa";
+            this.ten_khoa.ReadOnly = true;
+            this.ten_khoa.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ten_ct";
+            this.Column2.HeaderText = "Tên chương trình";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "chu_thich";
+            this.Column3.HeaderText = "Chú thích";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // btnkhongghi
             // 
@@ -209,12 +248,12 @@ namespace Project_SV
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Controls.Add(this.btnthem);
             this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnfrmmain);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnkhongghi);
+            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Location = new System.Drawing.Point(763, 251);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 172);
@@ -281,45 +320,6 @@ namespace Project_SV
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Tên chương trình";
-            // 
-            // ma_mh
-            // 
-            this.ma_mh.DataPropertyName = "ma_mh";
-            this.ma_mh.HeaderText = "Mã môn học";
-            this.ma_mh.Name = "ma_mh";
-            this.ma_mh.ReadOnly = true;
-            this.ma_mh.Width = 130;
-            // 
-            // ten_mh
-            // 
-            this.ten_mh.DataPropertyName = "ten_mh";
-            this.ten_mh.HeaderText = "Tên môn học";
-            this.ten_mh.Name = "ten_mh";
-            this.ten_mh.ReadOnly = true;
-            this.ten_mh.Width = 150;
-            // 
-            // ten_khoa
-            // 
-            this.ten_khoa.DataPropertyName = "ten_khoa";
-            this.ten_khoa.HeaderText = "Tên khoa";
-            this.ten_khoa.Name = "ten_khoa";
-            this.ten_khoa.ReadOnly = true;
-            this.ten_khoa.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ten_ct";
-            this.Column2.HeaderText = "Tên chương trình";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 180;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "chu_thich";
-            this.Column3.HeaderText = "Chú thích";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // frmmonhoc
             // 

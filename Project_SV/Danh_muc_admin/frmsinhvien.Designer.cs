@@ -30,6 +30,13 @@ namespace Project_SV
         private void InitializeComponent()
         {
             this.grsinhvien = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.txtmasv = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
@@ -47,8 +54,8 @@ namespace Project_SV
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnghi = new System.Windows.Forms.Button();
-            this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
+            this.btnthem = new System.Windows.Forms.Button();
             this.btnfrmmain = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
@@ -59,13 +66,6 @@ namespace Project_SV
             this.rdkhoaCN_OTO = new System.Windows.Forms.RadioButton();
             this.rdkhoaDL = new System.Windows.Forms.RadioButton();
             this.rdkhoa_CNTT = new System.Windows.Forms.RadioButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grsinhvien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,6 +94,53 @@ namespace Project_SV
             this.grsinhvien.Size = new System.Drawing.Size(892, 628);
             this.grsinhvien.TabIndex = 0;
             this.grsinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grsinhvien_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ma_sv";
+            this.Column1.HeaderText = "Mã sv";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ho_ten";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "gioi_tinh";
+            this.Column3.HeaderText = "Giới tính";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 90;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ngay_thang_nam_sinh";
+            this.Column4.HeaderText = "Ngày sinh";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "dia_chi";
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ten_lop";
+            this.Column6.HeaderText = "Lớp";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "ten_khoa";
+            this.Column7.HeaderText = "Khoa";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 120;
             // 
             // txttimkiem
             // 
@@ -218,6 +265,7 @@ namespace Project_SV
             this.dtp_ngay_thang_nam_sinh.Size = new System.Drawing.Size(133, 26);
             this.dtp_ngay_thang_nam_sinh.TabIndex = 4;
             this.dtp_ngay_thang_nam_sinh.Value = new System.DateTime(2021, 11, 21, 15, 48, 53, 0);
+            this.dtp_ngay_thang_nam_sinh.ValueChanged += new System.EventHandler(this.dtp_ngay_thang_nam_sinh_ValueChanged);
             // 
             // cmb_gioi_tinh
             // 
@@ -244,12 +292,12 @@ namespace Project_SV
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnghi);
             this.groupBox3.Controls.Add(this.btnsua);
             this.groupBox3.Controls.Add(this.btnthem);
             this.groupBox3.Controls.Add(this.btnfrmmain);
             this.groupBox3.Controls.Add(this.btnxoa);
             this.groupBox3.Controls.Add(this.btnkhongghi);
+            this.groupBox3.Controls.Add(this.btnghi);
             this.groupBox3.Location = new System.Drawing.Point(1072, 337);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(157, 309);
@@ -272,20 +320,6 @@ namespace Project_SV
             this.btnghi.UseVisualStyleBackColor = true;
             this.btnghi.Click += new System.EventHandler(this.btnghi_Click);
             // 
-            // btnthem
-            // 
-            this.btnthem.Image = global::Project_SV.Properties.Resources.thêm1;
-            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnthem.Location = new System.Drawing.Point(9, 27);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(132, 54);
-            this.btnthem.TabIndex = 25;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
             // btnsua
             // 
             this.btnsua.Image = global::Project_SV.Properties.Resources.sửa1;
@@ -299,6 +333,20 @@ namespace Project_SV
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
+            // 
+            // btnthem
+            // 
+            this.btnthem.Image = global::Project_SV.Properties.Resources.thêm1;
+            this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthem.Location = new System.Drawing.Point(9, 27);
+            this.btnthem.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnthem.Name = "btnthem";
+            this.btnthem.Size = new System.Drawing.Size(132, 54);
+            this.btnthem.TabIndex = 25;
+            this.btnthem.Text = "Thêm";
+            this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnfrmmain
             // 
@@ -427,53 +475,6 @@ namespace Project_SV
             this.rdkhoa_CNTT.Text = "CNTT";
             this.rdkhoa_CNTT.UseVisualStyleBackColor = true;
             this.rdkhoa_CNTT.CheckedChanged += new System.EventHandler(this.rdkhoa_CNTT_CheckedChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ma_sv";
-            this.Column1.HeaderText = "Mã sv";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ho_ten";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 120;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "gioi_tinh";
-            this.Column3.HeaderText = "Giới tính";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 90;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "ngay_thang_nam_sinh";
-            this.Column4.HeaderText = "Ngày sinh";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "dia_chi";
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ten_lop";
-            this.Column6.HeaderText = "Lớp";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "ten_khoa";
-            this.Column7.HeaderText = "Khoa";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 120;
             // 
             // frmsinhvien
             // 

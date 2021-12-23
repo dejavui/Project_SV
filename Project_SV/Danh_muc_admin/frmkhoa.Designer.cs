@@ -61,6 +61,8 @@ namespace Project_SV
             this.grkhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grkhoa.Name = "grkhoa";
             this.grkhoa.ReadOnly = true;
+            this.grkhoa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grkhoa.RowTemplate.ReadOnly = true;
             this.grkhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grkhoa.Size = new System.Drawing.Size(395, 445);
             this.grkhoa.TabIndex = 0;
@@ -192,12 +194,12 @@ namespace Project_SV
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Controls.Add(this.btnthem);
             this.groupBox1.Controls.Add(this.btnfrmmain);
             this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnkhongghi);
             this.groupBox1.Controls.Add(this.btnxoa);
+            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Location = new System.Drawing.Point(420, 18);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 268);

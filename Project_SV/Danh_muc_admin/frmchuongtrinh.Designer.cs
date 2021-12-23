@@ -36,6 +36,7 @@ namespace Project_SV
             this.label2 = new System.Windows.Forms.Label();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnghi = new System.Windows.Forms.Button();
             this.btnfrmmain = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace Project_SV
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnghi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grchuongtrinh)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,18 +109,31 @@ namespace Project_SV
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Controls.Add(this.btnfrmmain);
             this.groupBox1.Controls.Add(this.btnthem);
             this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnkhongghi);
+            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Location = new System.Drawing.Point(395, 152);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(309, 337);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
+            // 
+            // btnghi
+            // 
+            this.btnghi.BackColor = System.Drawing.SystemColors.Control;
+            this.btnghi.Image = global::Project_SV.Properties.Resources.thêm2;
+            this.btnghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnghi.Location = new System.Drawing.Point(6, 30);
+            this.btnghi.Name = "btnghi";
+            this.btnghi.Size = new System.Drawing.Size(153, 54);
+            this.btnghi.TabIndex = 10;
+            this.btnghi.Text = "Ghi";
+            this.btnghi.UseVisualStyleBackColor = true;
+            this.btnghi.Click += new System.EventHandler(this.btnghi_Click_1);
             // 
             // btnfrmmain
             // 
@@ -206,19 +219,6 @@ namespace Project_SV
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
-            // 
-            // btnghi
-            // 
-            this.btnghi.BackColor = System.Drawing.SystemColors.Control;
-            this.btnghi.Image = global::Project_SV.Properties.Resources.thêm2;
-            this.btnghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnghi.Location = new System.Drawing.Point(6, 30);
-            this.btnghi.Name = "btnghi";
-            this.btnghi.Size = new System.Drawing.Size(153, 54);
-            this.btnghi.TabIndex = 10;
-            this.btnghi.Text = "Ghi";
-            this.btnghi.UseVisualStyleBackColor = true;
-            this.btnghi.Click += new System.EventHandler(this.btnghi_Click_1);
             // 
             // frmchuongtrinh
             // 

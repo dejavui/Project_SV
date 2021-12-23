@@ -106,7 +106,6 @@ namespace Project_SV
             catch (Exception)
             {
                 MessageBox.Show("Lỗi kết nối");
-                //throw;
             }
             lockcontrol();
             rd_toantruong.Checked = true;
@@ -288,6 +287,11 @@ namespace Project_SV
             {
             loadgr();
             }
+        }
+
+        private void dtp_ngay_thang_nam_sinh_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

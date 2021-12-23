@@ -30,6 +30,8 @@ namespace Project_SV
         private void InitializeComponent()
         {
             this.grkhoahoc = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnghi = new System.Windows.Forms.Button();
@@ -39,11 +41,9 @@ namespace Project_SV
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnkhongghi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttenkhoahoc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grkhoahoc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,6 +65,20 @@ namespace Project_SV
             this.grkhoahoc.TabIndex = 0;
             this.grkhoahoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grkhoahoc_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ma_khoa_hoc";
+            this.Column1.HeaderText = "Mã Khóa học";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ten_khoa_hoc";
+            this.Column2.HeaderText = "Tên khóa học";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 230;
+            // 
             // txttimkiem
             // 
             this.txttimkiem.Location = new System.Drawing.Point(10, 27);
@@ -76,15 +90,15 @@ namespace Project_SV
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnghi);
+            this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnfrmmain);
             this.groupBox1.Controls.Add(this.btnthem);
-            this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnkhongghi);
+            this.groupBox1.Controls.Add(this.btnghi);
             this.groupBox1.Location = new System.Drawing.Point(507, 167);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(159, 300);
+            this.groupBox1.Size = new System.Drawing.Size(159, 295);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -185,30 +199,6 @@ namespace Project_SV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txttimkiem);
-            this.groupBox3.Location = new System.Drawing.Point(507, 93);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(363, 68);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tìm kiếm";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ma_khoa_hoc";
-            this.Column1.HeaderText = "Mã Khóa học";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ten_khoa_hoc";
-            this.Column2.HeaderText = "Tên khóa học";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 230;
-            // 
             // txttenkhoahoc
             // 
             this.txttenkhoahoc.Location = new System.Drawing.Point(114, 27);
@@ -226,15 +216,25 @@ namespace Project_SV
             this.label2.Text = "Tên khóa học";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txttimkiem);
+            this.groupBox3.Location = new System.Drawing.Point(507, 93);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(363, 68);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
+            // 
             // frmkhoahoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(895, 563);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grkhoahoc);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
